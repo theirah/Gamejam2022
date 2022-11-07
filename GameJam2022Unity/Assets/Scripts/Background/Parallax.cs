@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    private float length, startPos;
-    public GameObject mainCamera;
-    public float parallaxAmount;
+    [SerializeField]  private float length, startPos;
+    [SerializeField]  public GameObject mainCamera;
+    [SerializeField]  public float parallaxAmount;
 
     // Start is called before the first frame update
     void Start()
