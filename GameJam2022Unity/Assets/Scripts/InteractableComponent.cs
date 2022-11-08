@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,6 @@ public class InteractableComponent : MonoBehaviour
 
     public void Interact(InteractorComponent interactor)
     {
-
+        Debug.Log("Interacting with interactable");
     }
 }

@@ -6,6 +6,24 @@ public class InteractorComponent : MonoBehaviour
 {
     protected List<InteractableComponent> mRegisteredInteractables = new List<InteractableComponent>();
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        InteractableComponent interactable = collision.GetComponent<InteractableComponent>();
+        if (interactable != null)
+        {
+            RegisterInteractable(interactable);
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        InteractableComponent interactable = collision.GetComponent<InteractableComponent>();
+        if (interactable != null)
+        {
+            UnregisterInteractable(interactable);
+        }
+    }
+
     public void RegisterInteractable(InteractableComponent interactable)
     {
         if (!mRegisteredInteractables.Contains(interactable))
@@ -47,6 +65,6 @@ public class InteractorComponent : MonoBehaviour
 
     private bool IsFacingRight()
     {
-        return transform.rotation.eulerAngles.x >= 0;
+        return transform.localScale.x >= 0;
     }
 }
