@@ -1008,7 +1008,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1093125962}
   xMargin: 0.2
-  yMargin: 0.2
+  topMargin: 0.2
+  bottomMargin: 0.4
 --- !u!1 &1039127418
 GameObject:
   m_ObjectHideFlags: 0
