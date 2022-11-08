@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class InteractableComponent : MonoBehaviour
 {
-    // require trigger collider
-    // register/unregister with InteractorComponent if it enters range of trigger collider
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +19,8 @@ public class InteractableComponent : MonoBehaviour
         
     }
 
-    public void Interact(InteractorComponent interactor)
+    public virtual void Interact(InteractorComponent interactor)
     {
-        Debug.Log("Interacting with interactable");
+        Debug.LogError("No interaction defined for this interactor");
     }
 }
