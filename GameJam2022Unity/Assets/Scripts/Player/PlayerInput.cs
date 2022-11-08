@@ -11,10 +11,12 @@ public class PlayerInput : MonoBehaviour
     protected float mHorizontalMovement = 0f;
     protected bool mJump;
 
+    protected InteractorComponent mInteractorComponent;
     // Start is called before the first frame update
     void Awake()
     {
         mControllerComponent = GetComponent<CharacterController2D>();
+        mInteractorComponent = GetComponent<InteractorComponent>();
     }
 
     void Update()
@@ -23,6 +25,10 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             mJump = true;
+        }
+        if (Input.GetButtonDown("Interact"))
+        {
+            mInteractorComponent.TryInteract();
         }
     }
 
