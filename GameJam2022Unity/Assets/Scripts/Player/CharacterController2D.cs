@@ -30,6 +30,18 @@ public class CharacterController2D : MonoBehaviour
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
+
+	public void CopyStatus(CharacterController2D other)
+	{
+		m_Grounded = other.m_Grounded;
+		if (m_FacingRight != other.m_FacingRight)
+        {
+			Flip();
+        }
+		m_Velocity = other.m_Velocity;
+		m_wasCrouching = other.m_wasCrouching;
+	}
+
 	private void Awake()
 	{
 		m_Rigidbody2D = GetComponent<Rigidbody2D>();
