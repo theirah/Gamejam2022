@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RedWalkAnim
+  m_Name: RedIdleAnim
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 2055351785, guid: 6ac7bbf4de52b7c40be7c37a5d9b670f, type: 3}
+      value: {fileID: -423520337, guid: 4b62eeb921e137d44976abf652214a38, type: 3}
     - time: 0.083333336
-      value: {fileID: -1129742151, guid: 6ac7bbf4de52b7c40be7c37a5d9b670f, type: 3}
+      value: {fileID: 232996137, guid: 4b62eeb921e137d44976abf652214a38, type: 3}
     - time: 0.16666667
-      value: {fileID: -407614327, guid: 6ac7bbf4de52b7c40be7c37a5d9b670f, type: 3}
+      value: {fileID: 137326206, guid: 4b62eeb921e137d44976abf652214a38, type: 3}
     - time: 0.25
-      value: {fileID: 920033699, guid: 6ac7bbf4de52b7c40be7c37a5d9b670f, type: 3}
+      value: {fileID: -1504830510, guid: 4b62eeb921e137d44976abf652214a38, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 2055351785, guid: 6ac7bbf4de52b7c40be7c37a5d9b670f, type: 3}
-    - {fileID: -1129742151, guid: 6ac7bbf4de52b7c40be7c37a5d9b670f, type: 3}
-    - {fileID: -407614327, guid: 6ac7bbf4de52b7c40be7c37a5d9b670f, type: 3}
-    - {fileID: 920033699, guid: 6ac7bbf4de52b7c40be7c37a5d9b670f, type: 3}
+    - {fileID: -423520337, guid: 4b62eeb921e137d44976abf652214a38, type: 3}
+    - {fileID: 232996137, guid: 4b62eeb921e137d44976abf652214a38, type: 3}
+    - {fileID: 137326206, guid: 4b62eeb921e137d44976abf652214a38, type: 3}
+    - {fileID: -1504830510, guid: 4b62eeb921e137d44976abf652214a38, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
