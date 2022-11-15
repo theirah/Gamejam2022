@@ -190,7 +190,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Size: {x: 0.45, y: 1}
   m_Direction: 0
 --- !u!114 &5364866167705670001
 MonoBehaviour:
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73cf6def58dfb44086e378ecc6a4077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 650
+  m_JumpForce: 800
   m_CrouchSpeed: 0.4
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -280,6 +280,6 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0.01}
+  m_ConnectedAnchor: {x: 0, y: 0}
   m_DampingRatio: 0
   m_Frequency: 0
