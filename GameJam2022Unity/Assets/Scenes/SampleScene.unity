@@ -804,6 +804,7 @@ GameObject:
   - component: {fileID: 850108226}
   - component: {fileID: 850108229}
   - component: {fileID: 850108230}
+  - component: {fileID: 850108231}
   m_Layer: 0
   m_Name: PretendItsATree
   m_TagString: Untagged
@@ -912,6 +913,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 029af0fa69236294c8af1385a48e1f10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &850108231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850108224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578177e7251ca4f4585224022e128954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &963194225
