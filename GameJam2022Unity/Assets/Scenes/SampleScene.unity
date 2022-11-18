@@ -927,6 +927,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 578177e7251ca4f4585224022e128954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageType: 1
+  damage: 10
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,6 +1930,22 @@ PrefabInstance:
     - target: {fileID: 8658036195571024585, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951307582057970212, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
+      propertyPath: damagedBy.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951307582057970212, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
+      propertyPath: damagedBy.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951307582057970212, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
+      propertyPath: damagedBy.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8951307582057970212, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
+      propertyPath: damagedBy.Array.data[2]
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
