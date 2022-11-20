@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 1285803803972166382}
   - component: {fileID: -8926441373028904260}
   - component: {fileID: 1093125971}
+  - component: {fileID: 948082822449747117}
   m_Layer: 6
   m_Name: Red
   m_TagString: Untagged
@@ -215,6 +216,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1777789774084390083}
   m_CeilingCheck: {fileID: 1777789773703831573}
   m_CrouchDisableCollider: {fileID: 0}
+  m_FacingRight: 1
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -234,6 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mRunSpeed: 36
+  mEquippedWeapon: {fileID: 11400000, guid: e9d69c362ccde0b4f946fba4b7601952, type: 2}
 --- !u!95 &-7894173396008061536
 Animator:
   serializedVersion: 4
@@ -296,3 +299,15 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_DampingRatio: 0
   m_Frequency: 0
+--- !u!114 &948082822449747117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5364866166488312474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98593c24a5c83ac4eaceab406f9bf167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

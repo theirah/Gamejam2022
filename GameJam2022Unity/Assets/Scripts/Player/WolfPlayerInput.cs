@@ -6,6 +6,8 @@ public class WolfPlayerInput : MonoBehaviour
 {
     [SerializeField]
     float mRunSpeed;
+    [SerializeField]
+    Scratch mEquippedWeapon;
 
     protected CharacterController2D mControllerComponent;
     protected float mHorizontalMovement = 0f;
@@ -29,6 +31,13 @@ public class WolfPlayerInput : MonoBehaviour
         if (Input.GetButtonDown("Interact"))
         {
             mInteractorComponent.TryInteract();
+        }
+        if (Input.GetButton("Fire"))
+        {
+            Vector3 mousePosition = Input.mousePosition;
+            mousePosition.z = -Camera.main.transform.position.z; // distance between camera and grid, whose position is at 0
+            Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            mEquippedWeapon.Fire(gameObject.transform.position, targetPosition);
         }
     }
 
