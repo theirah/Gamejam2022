@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 948082822449747117}
   m_Layer: 6
   m_Name: Red
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,6 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3452f293f85cd674e8125bb86c58fc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damagedBy: 
 --- !u!255 &1093125971
 FixedJoint2D:
   m_ObjectHideFlags: 0

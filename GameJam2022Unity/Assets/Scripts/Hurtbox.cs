@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Hurtbox : MonoBehaviour
 {
+    public DamageSources[] damagedBy;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +19,22 @@ public class Hurtbox : MonoBehaviour
         Hitbox attack = collision.GetComponent<Hitbox>();
         if (attack != null)
         {
-            //TODO: Check if the object this script is attached to takes damage from the attacker by looking at the attack object
-            //Handle damage here
-            Debug.Log("Ouch!");
+            if (damagedBy.Contains(attack.damageType))
+            {
+                //Handle damage here
+                HealthComponent health = GetComponent<HealthComponent>();
+                if (health == null)
+                {
+                    //If we're not directly connected, check if it's the player, with its shared health
+                    health = GetComponentInParent<HealthComponent>();
+                    if (health == null)
+                    {
+                        Debug.LogError("Hurtbox hit, but not healthComponent found");
+                        return;
+                    }
+                }
+                health.TakeDamage(attack.damage);
+            }
         }
     }
 
