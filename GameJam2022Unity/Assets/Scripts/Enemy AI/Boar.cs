@@ -10,6 +10,7 @@ public class Boar : MonoBehaviour
     [SerializeField] public float m_MovementSmoothing = 0.05f;
     [SerializeField] private float m_MovementSpeed = 5f;
     [SerializeField] private Transform m_GroundCheck;
+    [SerializeField] private Transform m_GroundCheck2;
     [SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
     [SerializeField] private int maxCoyoteTime = 2;
 
@@ -140,8 +141,21 @@ public class Boar : MonoBehaviour
             {
                 m_Grounded = true;
                 coyoteTime = maxCoyoteTime;
+                return;
             }
         }
+        //Try with the second ground point (two used so the boar can handle slopes)
+        Collider2D[] colliders2 = Physics2D.OverlapCircleAll(m_GroundCheck2.position, k_GroundedRadius, m_WhatIsGround);
+        for (int i = 0; i < colliders2.Length; i++)
+        {
+            if (colliders2[i].gameObject != gameObject && !colliders2[i].isTrigger)
+            {
+                m_Grounded = true;
+                coyoteTime = maxCoyoteTime;
+                return;
+            }
+        }
+
     }
 
     private void KeepUpright()
