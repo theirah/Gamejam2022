@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class HealthComponent : MonoBehaviour
 {
-    public int CurrHealth { get; protected set; }
-
     [SerializeField]
-    public int MaxHealth { get; protected set; }
+    public int MaxHealth;
+
+    public int CurrHealth { get; protected set; }
 
     public void Start()
     {
