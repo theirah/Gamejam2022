@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: BasicScratch
   m_EditorClassIdentifier: 
   hitPrefab: {fileID: 4696197901704808509, guid: f6dbaeee2cbed7a428472928be47b89b, type: 3}
-  cooldown: 0
+  cooldown: 0.75
+  isChargeWeapon: 0
+  maxChargeTime: 0
+  spawnOffset: {x: 1.5, y: 0, z: 0}

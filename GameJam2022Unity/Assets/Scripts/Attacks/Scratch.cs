@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapon/Scratch", order = 1)]
 public class Scratch : Weapon
 {
+    [SerializeField]
     Vector3 spawnOffset;
     protected override Vector3 GetHitSpawnLocation(Vector3 initiatorPosition, Vector3 targetPosition)
     {

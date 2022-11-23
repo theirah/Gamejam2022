@@ -6,40 +6,46 @@ public class WeaponHandlerComponent : MonoBehaviour
 {
     [SerializeField]
     Weapon mEquippedWeapon;
-    [SerializeField]
-    float mCooldown;
 
 
     protected float mCurrChargeTime;
+    protected float timeBeforeNextUse = 0;
 
     // Update is called once per frame
     void Update()
     {
-        if (mEquippedWeapon.isChargeWeapon)
+        timeBeforeNextUse -= Time.deltaTime;
+        if (timeBeforeNextUse < 0)
         {
-            if (Input.GetButton("Fire"))
+            timeBeforeNextUse = 0;
+        }
+        if (timeBeforeNextUse <=0)
+        {
+            if (mEquippedWeapon.isChargeWeapon)
             {
-                 AddCharge(Time.deltaTime);
-            }
-            if (Input.GetButtonUp("Fire"))
-            {
-                GameObject go = FireWeapon(mCurrChargeTime);
-                ChargedObjectComponent chargedObjectComponent = go.GetComponent<ChargedObjectComponent>();
-                if (chargedObjectComponent)
+                if (Input.GetButton("Fire"))
                 {
-                    chargedObjectComponent.InitWithCharge(mCurrChargeTime / mEquippedWeapon.maxChargeTime);
+                    AddCharge(Time.deltaTime);
                 }
-                mCurrChargeTime = 0;
+                if (Input.GetButtonUp("Fire"))
+                {
+                    GameObject go = FireWeapon(mCurrChargeTime);
+                    ChargedObjectComponent chargedObjectComponent = go.GetComponent<ChargedObjectComponent>();
+                    if (chargedObjectComponent)
+                    {
+                        chargedObjectComponent.InitWithCharge(mCurrChargeTime / mEquippedWeapon.maxChargeTime);
+                    }
+                    mCurrChargeTime = 0;
+                }
             }
-        }
-        else
-        {
-            if (Input.GetButton("Fire"))
+            else
             {
-                FireWeapon(0);
+                if (Input.GetButton("Fire"))
+                {
+                    FireWeapon(0);
+                }
             }
         }
-
     }
 
     GameObject FireWeapon(float charge)
@@ -47,7 +53,9 @@ public class WeaponHandlerComponent : MonoBehaviour
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = -Camera.main.transform.position.z; // distance between camera and grid, whose position is at 0
         Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-        return mEquippedWeapon.Fire(gameObject.transform.position, targetPosition, charge);
+        GameObject go = mEquippedWeapon.Fire(gameObject.transform.position, targetPosition, charge);
+        timeBeforeNextUse = mEquippedWeapon.cooldown;
+        return go;
     }
 
     public void AddCharge(float chargeAmt)
