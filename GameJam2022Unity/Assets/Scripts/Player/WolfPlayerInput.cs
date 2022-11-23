@@ -32,13 +32,6 @@ public class WolfPlayerInput : MonoBehaviour
         {
             mInteractorComponent.TryInteract();
         }
-        if (Input.GetButton("Fire"))
-        {
-            Vector3 mousePosition = Input.mousePosition;
-            mousePosition.z = -Camera.main.transform.position.z; // distance between camera and grid, whose position is at 0
-            Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            mEquippedWeapon.Fire(gameObject.transform.position, targetPosition);
-        }
     }
 
     // Update is called once per frame

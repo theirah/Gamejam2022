@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb10f9f37d46364a87ea4ee5490348a, type: 3}
   m_Name: BasicScratch
   m_EditorClassIdentifier: 
-  spawnOffset: {x: 1.5, y: 0, z: 0}
-  hitboxRepresentation: {fileID: 4696197901704808509, guid: f6dbaeee2cbed7a428472928be47b89b, type: 3}
+  hitPrefab: {fileID: 4696197901704808509, guid: f6dbaeee2cbed7a428472928be47b89b, type: 3}
+  cooldown: 0

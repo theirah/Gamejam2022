@@ -6,52 +6,24 @@ using UnityEngine;
 public class Bow : Weapon
 {
     [SerializeField]
-    float maxChargeTime;
-    [SerializeField]
-    float maxSpeed;
-    [SerializeField]
-    GameObject projectilePrefab;
-    [SerializeField]
-    float spawnOffset;
+    float spawnDistance; // distance from initiator to spawn arrow
+    
 
-    float chargeTime;
-    public void AddCharge(float chargeAmt)
+    protected override Vector3 GetHitSpawnLocation(Vector3 initiatorPosition, Vector3 targetPosition)
     {
-        chargeTime += chargeAmt;
-        if (chargeTime > maxChargeTime)
-        {
-            chargeTime = maxChargeTime;
-        }
+        Vector3 direction = (targetPosition - initiatorPosition).normalized;
+        return initiatorPosition + direction * spawnDistance;
     }
 
-    public void CancelCharging()
+    protected override Quaternion GetHitSpawnRotation(Vector3 initiatorPosition, Vector3 targetPosition)
     {
-        chargeTime = 0;
-    }
-
-    public void Fire(Vector3 initiatorPosition, Vector3 targetPosition)
-    {
-        if (projectilePrefab)
-        {
-            Vector3 direction = (targetPosition - initiatorPosition).normalized;
-
-            GameObject projectile = Instantiate(projectilePrefab, initiatorPosition + direction*spawnOffset, Quaternion.Euler(DirectionToAngle(direction), 0, 0));
-            Rigidbody2D projectileRigidbody = projectile.GetComponent<Rigidbody2D>();
-            if (projectileRigidbody)
-            {
-                float speed = CalculateProjectileSpeed();
-                projectileRigidbody.velocity = speed * direction;
-            }
-        }
-    }
-
-    protected float CalculateProjectileSpeed()
-    {
-        return (chargeTime / maxChargeTime) * maxSpeed;
+        Vector3 direction = (targetPosition - initiatorPosition).normalized;
+        return Quaternion.Euler(0, 0, DirectionToAngle(direction));
     }
 
     protected float DirectionToAngle(Vector3 direction)
     {
-        return 0;
+        float angleInRadians = Mathf.Atan2(direction.y, direction.x);
+        return Mathf.Rad2Deg*angleInRadians;
     }
 }

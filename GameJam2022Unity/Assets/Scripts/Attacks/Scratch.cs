@@ -5,23 +5,33 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Weapon", menuName = "Weapon/Scratch", order = 1)]
 public class Scratch : Weapon
 {
-    [SerializeField]
     Vector3 spawnOffset;
-    [SerializeField]
-    GameObject hitboxRepresentation; // the object representing the hitbox and animation associated with the struck location
-    [SerializeField]
-    float cooldown;
-    private GameObject hitbox = null;
-
-    public void Fire(Vector3 initiatorPosition, Vector3 targetPosition)
+    protected override Vector3 GetHitSpawnLocation(Vector3 initiatorPosition, Vector3 targetPosition)
     {
-        if (hitbox == null) 
+        Vector3 instanceOffset = spawnOffset;
+        instanceOffset.x *= GetFaceDirectionMultiplier(initiatorPosition, targetPosition);
+        return initiatorPosition + instanceOffset;
+    }
+
+    protected override Quaternion GetHitSpawnRotation(Vector3 initiatorPosition, Vector3 targetPosition)
+    {
+        if (IsFacingRight(initiatorPosition, targetPosition))
         {
-            int offsetDirection = targetPosition.x >= initiatorPosition.x ? 1 : -1;
-            Vector3 instanceOffset = spawnOffset;
-            instanceOffset.x *= offsetDirection;
-            hitbox = Instantiate(hitboxRepresentation, initiatorPosition + instanceOffset, Quaternion.identity);
-            hitbox.transform.localScale = new Vector3(offsetDirection * hitbox.transform.localScale.x, hitbox.transform.localScale.y, hitbox.transform.localScale.z);
+            return Quaternion.identity;
         }
+        else
+        {
+            return Quaternion.Euler(0, 180, 0);
+        }
+    }
+
+    // returns 1 if facing right, -1 if facing left
+    int GetFaceDirectionMultiplier(Vector3 initiatorPosition, Vector3 targetPosition)
+    {
+        return IsFacingRight(initiatorPosition, targetPosition) ? 1 : -1;
+    }
+    bool IsFacingRight(Vector3 initiatorPosition, Vector3 targetPosition)
+    {
+        return targetPosition.x >= initiatorPosition.x;
     }
 }
