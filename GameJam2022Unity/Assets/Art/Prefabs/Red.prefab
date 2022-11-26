@@ -280,7 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3452f293f85cd674e8125bb86c58fc79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damagedBy: 
+  damagedBy: 0100000002000000
 --- !u!255 &1093125971
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -325,4 +325,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mEquippedWeapon: {fileID: 11400000, guid: e9d69c362ccde0b4f946fba4b7601952, type: 2}
-  mCooldown: 0

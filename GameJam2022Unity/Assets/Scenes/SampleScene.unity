@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2266,18 +2266,6 @@ PrefabInstance:
     - target: {fileID: 8658036195571024585, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8951307582057970212, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
-      propertyPath: damagedBy.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8951307582057970212, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
-      propertyPath: damagedBy.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8951307582057970212, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
-      propertyPath: damagedBy.Array.data[1]
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8951307582057970212, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
       propertyPath: damagedBy.Array.data[2]
