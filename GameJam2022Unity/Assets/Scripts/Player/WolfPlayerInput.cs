@@ -6,6 +6,8 @@ public class WolfPlayerInput : MonoBehaviour
 {
     [SerializeField]
     float mRunSpeed;
+    [SerializeField]
+    Scratch mEquippedWeapon;
 
     protected CharacterController2D mControllerComponent;
     protected float mHorizontalMovement = 0f;

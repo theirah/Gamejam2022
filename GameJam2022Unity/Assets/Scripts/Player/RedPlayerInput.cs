@@ -30,6 +30,7 @@ public class RedPlayerInput : MonoBehaviour
         {
             mInteractorComponent.TryInteract();
         }
+
     }
 
     // Update is called once per frame
@@ -38,4 +39,6 @@ public class RedPlayerInput : MonoBehaviour
         mControllerComponent.Move(mHorizontalMovement * Time.fixedDeltaTime, false, mJump);
         mJump = false;
     }
+
+
 }
