@@ -21,7 +21,6 @@ public class Crow : MonoBehaviour
 
     private bool m_FacingRight = false;
     private Rigidbody2D rbody;
-    private bool mCanSeePlayer = false;
     private Vector3 m_Velocity = Vector3.zero;
     private bool mIsCharging = false;
     private GameObject mCurrentFeather = null;
