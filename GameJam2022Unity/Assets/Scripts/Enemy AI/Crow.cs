@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -9,8 +10,10 @@ public class Crow : MonoBehaviour
 {
     [SerializeField] public float attackDistance = 3.0f;
     [SerializeField] public float featherAttackDistance = 20.0f;
-    [SerializeField] public float featherVelocity = 5.0f;
-    [SerializeField] public GameObject chargeAttack;
+    [SerializeField] public float featherVelocity = 15.0f;
+    [SerializeField] public int flapTime = 30;
+    [SerializeField] public float flapStrength = 1.0f;
+    [SerializeField] public GameObject peckAttack;
     [SerializeField] private GameObject feather;
     [SerializeField] public float noticePlayerJumpForce = 100.0f;
     [SerializeField] public float m_MovementSmoothing = 0.05f;
@@ -22,12 +25,17 @@ public class Crow : MonoBehaviour
     private Vector3 m_Velocity = Vector3.zero;
     private bool mIsCharging = false;
     private GameObject mCurrentFeather = null;
+    private GameObject mCurrentPeck = null;
+    private float? mLastHealth = null;
+
+    private bool mFlapUp = false;
+    private int mFlapCounter = 0;
     
 
     // Start is called before the first frame update
     void Start()
     {
-        rbody= GetComponent<Rigidbody2D>();
+        rbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -68,6 +76,22 @@ public class Crow : MonoBehaviour
                 Vector3 targetVelocity = (hit.transform.position - transform.position).normalized * m_MovementSpeed;
                 // And then smoothing it out and applying it to the character
                 rbody.velocity = Vector3.SmoothDamp(rbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
+                //If the player is close enough to attack
+                if (Vector3.Magnitude(hit.transform.position - transform.position) < attackDistance)
+                {
+                    //Debug.Log("Crow attacking!");
+                    if (mCurrentPeck == null)
+                    {
+                         PeckAttack(hit);
+                    }
+                }
+                else if (Vector3.Magnitude(hit.transform.position - transform.position) > featherAttackDistance)
+                {
+                    //Crow is out of range, go back to shooting mode
+                    mLastHealth = GetComponent<HealthComponent>().CurrHealth;
+                    mIsCharging = false;
+                    rbody.velocity = Vector3.zero;
+                }
             }
             else
             {
@@ -78,17 +102,29 @@ public class Crow : MonoBehaviour
                 }
             }
         }
-        else
+
+        if (!mIsCharging)
         {
-            mCanSeePlayer = false;
             Flap();
         }
     }
 
     private void Flap()
     {
-        //TODO
-        //Move the crow up and down a bit as if it was flapping
+        if (mFlapUp)
+        {
+            rbody.velocity = Vector3.up * flapStrength;
+            mFlapCounter++;
+            if (mFlapCounter > flapTime)
+                mFlapUp = false;
+        }
+        else
+        {
+            rbody.velocity = Vector3.down * flapStrength;
+            mFlapCounter--;
+            if (mFlapCounter < 0)
+                mFlapUp = true;
+        }
     }
 
     private void Flip()
@@ -117,7 +153,11 @@ public class Crow : MonoBehaviour
         }
         else
         {
-            if (health.MaxHealth != health.CurrHealth)
+            if (mLastHealth == null)
+            {
+                mLastHealth = health.MaxHealth;
+            }
+            if (mLastHealth != health.CurrHealth)
             {
                 mIsCharging = true;
             }
@@ -137,5 +177,23 @@ public class Crow : MonoBehaviour
         Quaternion rot = Quaternion.Euler(0, 0, angle);
         mCurrentFeather = Instantiate(feather, transform.position, rot);
         mCurrentFeather.GetComponent<Rigidbody2D>().velocity = mCurrentFeather.transform.rotation * (featherVelocity * new Vector3(1, 0, 0));
+    }
+
+    void PeckAttack(RaycastHit2D hit)
+    {
+        if (peckAttack == null)
+        {
+            Debug.LogError("No attack found");
+            return;
+        }
+        Vector3 direction = (hit.transform.position - transform.position).normalized;
+        float angleInRadians = Mathf.Atan2(direction.y, direction.x);
+        float angle = Mathf.Rad2Deg * angleInRadians;
+        Quaternion rot = Quaternion.Euler(0, 0, angle);
+        mCurrentPeck = Instantiate(peckAttack, this.transform.position, rot);
+        
+        Vector3 theScale = mCurrentPeck.transform.localScale;
+        theScale.x *= -1;
+        mCurrentPeck.transform.localScale = theScale;
     }
 }

@@ -40,7 +40,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8139939966300980745}
-  - component: {fileID: 8658490616751689740}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Untagged
@@ -60,32 +59,10 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 136495675765997795}
   - {fileID: 1247844279284959844}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &8658490616751689740
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4436725312965944661}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &6411670903779909404
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,7 +78,6 @@ GameObject:
   - component: {fileID: 1880104481819439004}
   - component: {fileID: 6959719880148050694}
   - component: {fileID: 222892815302789262}
-  - component: {fileID: 6475163947885755697}
   m_Layer: 0
   m_Name: PlaceholderCrow
   m_TagString: Untagged
@@ -122,8 +98,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2941638625836042826}
+  - {fileID: 136495675765997795}
   m_Father: {fileID: 8139939966300980745}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4006425237454159318
 SpriteRenderer:
@@ -238,8 +215,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDistance: 3
   featherAttackDistance: 20
-  featherVelocity: 5
-  chargeAttack: {fileID: 0}
+  featherVelocity: 15
+  flapTime: 30
+  flapStrength: 3
+  peckAttack: {fileID: 786137573562147152, guid: af7772b0383465545ab7a74b2fb9e909, type: 3}
   feather: {fileID: 6459276437909659921, guid: 0a5adcca2e7ce5741a76c996140088ab, type: 3}
   noticePlayerJumpForce: 100
   m_MovementSmoothing: 0.05
@@ -260,30 +239,12 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.3, y: 0.3}
   m_Direction: 1
---- !u!255 &6475163947885755697
-FixedJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6411670903779909404}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 8658490616751689740}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_DampingRatio: 0
-  m_Frequency: 0
 --- !u!1001 &1470423458343235812
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 8139939966300980745}
+    m_TransformParent: {fileID: 1247844279284959844}
     m_Modifications:
     - target: {fileID: 1550100564692168711, guid: e9b6538afdd23374fa1d671ee5a3b5cf, type: 3}
       propertyPath: m_Pivot.x
@@ -295,7 +256,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1550100564692168711, guid: e9b6538afdd23374fa1d671ee5a3b5cf, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1550100564692168711, guid: e9b6538afdd23374fa1d671ee5a3b5cf, type: 3}
       propertyPath: m_AnchorMax.x
