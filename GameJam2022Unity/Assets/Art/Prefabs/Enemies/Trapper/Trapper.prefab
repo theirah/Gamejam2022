@@ -1,36 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1224168145952470917
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2941638625836042826}
-  m_Layer: 6
-  m_Name: GroundCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2941638625836042826
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1224168145952470917}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.249, y: -0.194, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1247844279284959844}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4436725312965944661
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +11,7 @@ GameObject:
   - component: {fileID: 8139939966300980745}
   - component: {fileID: 9069093001706853798}
   m_Layer: 0
-  m_Name: Boar
+  m_Name: Trapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +65,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6325569829906556730}
   m_Layer: 6
-  m_Name: GroundCheck2
+  m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -115,7 +84,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1247844279284959844}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6411670903779909404
 GameObject:
@@ -127,14 +96,14 @@ GameObject:
   m_Component:
   - component: {fileID: 1247844279284959844}
   - component: {fileID: 4006425237454159318}
+  - component: {fileID: 5482728508931591414}
   - component: {fileID: 4930321480833622526}
   - component: {fileID: 4494705167327483599}
   - component: {fileID: 1880104481819439004}
-  - component: {fileID: 7298476077007463890}
   - component: {fileID: 222892815302789262}
   - component: {fileID: 5402253230745581823}
   m_Layer: 8
-  m_Name: PlaceholderBoar
+  m_Name: PlaceholderTrapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +121,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2941638625836042826}
   - {fileID: 6325569829906556730}
   m_Father: {fileID: 8139939966300980745}
   m_RootOrder: 1
@@ -209,6 +177,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5482728508931591414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6411670903779909404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a83f5a01e266a7499de25cd9337125b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDistance: 10
+  trap: {fileID: 739789074709708636, guid: 007c59b39236ec749bfc8b0fa13903a7, type: 3}
+  noticePlayerJumpForce: 100
+  m_MovementSmoothing: 0.05
+  m_MovementSpeed: 5
+  m_GroundCheck: {fileID: 6325569829906556730}
+  m_GroundCheck2: {fileID: 0}
+  m_WhatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  maxCoyoteTime: 2
 --- !u!50 &4930321480833622526
 Rigidbody2D:
   serializedVersion: 4
@@ -256,29 +247,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
---- !u!114 &7298476077007463890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6411670903779909404}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f5769d3d1486314a8ac44f1df1107b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackDistance: 3
-  chargeAttack: {fileID: 786137573562147152, guid: 543bfe573f82a4c428fc6f85803bf67b, type: 3}
-  noticePlayerJumpForce: 200
-  m_MovementSmoothing: 0.05
-  m_MovementSpeed: 7
-  m_GroundCheck: {fileID: 2941638625836042826}
-  m_GroundCheck2: {fileID: 6325569829906556730}
-  m_WhatIsGround:
-    serializedVersion: 2
-    m_Bits: 55
-  maxCoyoteTime: 2
 --- !u!70 &222892815302789262
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
