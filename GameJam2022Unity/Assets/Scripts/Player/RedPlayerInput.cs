@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RedPlayerInput : MonoBehaviour
+public class RedPlayerInput : MonoBehaviour, IPauseable
 {
     [SerializeField]
     float mRunSpeed;

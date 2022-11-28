@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponHandlerComponent : MonoBehaviour
+public class WeaponHandlerComponent : MonoBehaviour, IPauseable
 {
     [SerializeField]
     Weapon mEquippedWeapon;
-
 
     protected float mCurrChargeTime;
     protected float timeBeforeNextUse = 0;

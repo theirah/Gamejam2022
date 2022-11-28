@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WolfPlayerInput : MonoBehaviour
+public class WolfPlayerInput : MonoBehaviour, IPauseable
 {
     [SerializeField]
     float mRunSpeed;
