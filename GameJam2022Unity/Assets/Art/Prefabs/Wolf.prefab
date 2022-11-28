@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagedBy: 0100000002000000
+  scaleDamage: 0.5
 --- !u!114 &7249784502241698403
 MonoBehaviour:
   m_ObjectHideFlags: 0

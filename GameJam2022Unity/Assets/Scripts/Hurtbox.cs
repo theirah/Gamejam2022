@@ -7,6 +7,7 @@ using UnityEngine;
 public class Hurtbox : MonoBehaviour
 {
     public DamageSources[] damagedBy;
+    public float scaleDamage = 1f;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,7 @@ public class Hurtbox : MonoBehaviour
                         return;
                     }
                 }
-                health.TakeDamage(attack.damage);
+                health.TakeDamage(attack.damage * scaleDamage);
             }
         }
     }

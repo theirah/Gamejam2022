@@ -48,6 +48,11 @@ public class BecomeTrapped : MonoBehaviour
         {
             wolf.enabled = false;
         }
+        SwapCharacterComponent swap = transform.parent.GetComponent<SwapCharacterComponent>();
+        if (swap != null)
+        {
+            swap.enabled = false;
+        }
 
         //Stop the player's momentum
         GetComponent<Rigidbody2D>().velocity = Vector3.zero;
@@ -78,6 +83,11 @@ public class BecomeTrapped : MonoBehaviour
                     if (wolf != null)
                     {
                         wolf.enabled = true;
+                    }
+                    SwapCharacterComponent swap = transform.parent.GetComponent<SwapCharacterComponent>();
+                    if (swap != null)
+                    {
+                        swap.enabled = true;
                     }
                 }
             }
