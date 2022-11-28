@@ -204,7 +204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4436725312965944661, guid: 82eb81dec5fea5a479114e8b03ba450a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6475163947885755697, guid: 82eb81dec5fea5a479114e8b03ba450a, type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -281,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4436725312965944661, guid: ef289a949a7405044ac8d9a75da41132, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4930321480833622526, guid: ef289a949a7405044ac8d9a75da41132, type: 3}
       propertyPath: m_GravityScale
@@ -2352,6 +2352,10 @@ PrefabInstance:
     - target: {fileID: 4937995849824373821, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
       propertyPath: MaxHealth
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8658036194920607691, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8658036194920607691, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
       propertyPath: m_ConnectedAnchor.y

@@ -55,6 +55,8 @@ public class Crow : MonoBehaviour
         //Check if the enemy can see the player
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, player.transform.position - transform.position);
+        if (hit.collider == null)
+            return;
         if (hit.collider.gameObject.tag == "Player")
         {
             if (mIsCharging == false)

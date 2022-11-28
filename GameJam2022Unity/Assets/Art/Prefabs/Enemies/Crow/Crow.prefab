@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8139939966300980745}
   - component: {fileID: 9037550016736045899}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Crow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 6959719880148050694}
   - component: {fileID: 222892815302789262}
   - component: {fileID: 5436915933099843762}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlaceholderCrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagedBy: 0000000002000000
+  scaleDamage: 1
 --- !u!114 &1880104481819439004
 MonoBehaviour:
   m_ObjectHideFlags: 0
