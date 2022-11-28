@@ -82,6 +82,7 @@ GameObject:
   - component: {fileID: 1093125971}
   - component: {fileID: 948082822449747117}
   - component: {fileID: -2550436382406676740}
+  - component: {fileID: 1167463133208286228}
   m_Layer: 6
   m_Name: Red
   m_TagString: Player
@@ -296,7 +297,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: -0.5, y: 1}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!114 &948082822449747117
@@ -325,3 +326,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mEquippedWeapon: {fileID: 11400000, guid: e9d69c362ccde0b4f946fba4b7601952, type: 2}
+--- !u!114 &1167463133208286228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5364866166488312474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25da71ac933b8364a80f1108f26004cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

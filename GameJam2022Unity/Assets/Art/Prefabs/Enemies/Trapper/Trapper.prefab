@@ -79,7 +79,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5006997345836212165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2, z: 0}
+  m_LocalPosition: {x: 0, y: -0.443, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -100,8 +100,8 @@ GameObject:
   - component: {fileID: 4930321480833622526}
   - component: {fileID: 4494705167327483599}
   - component: {fileID: 1880104481819439004}
-  - component: {fileID: 222892815302789262}
   - component: {fileID: 5402253230745581823}
+  - component: {fileID: 4494444359929416785}
   m_Layer: 8
   m_Name: PlaceholderTrapper
   m_TagString: Untagged
@@ -166,7 +166,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 64a1fdd0b95ac4741bc3234c3d357498, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4d8e3d6c04359e64785aebd5f557692f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -189,17 +189,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a83f5a01e266a7499de25cd9337125b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 10
+  attackDistance: 15
   trap: {fileID: 739789074709708636, guid: 007c59b39236ec749bfc8b0fa13903a7, type: 3}
   noticePlayerJumpForce: 100
   m_MovementSmoothing: 0.05
-  m_MovementSpeed: 5
   m_GroundCheck: {fileID: 6325569829906556730}
   m_GroundCheck2: {fileID: 0}
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 0
-  maxCoyoteTime: 2
 --- !u!50 &4930321480833622526
 Rigidbody2D:
   serializedVersion: 4
@@ -247,22 +245,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
---- !u!70 &222892815302789262
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6411670903779909404}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6, y: 0.4}
-  m_Direction: 1
 --- !u!255 &5402253230745581823
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -281,6 +263,22 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0, y: 0}
   m_DampingRatio: 0
   m_Frequency: 0
+--- !u!70 &4494444359929416785
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6411670903779909404}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.57, y: 0.88}
+  m_Direction: 0
 --- !u!1001 &7312318164578165409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -358,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1550100564692168711, guid: e9b6538afdd23374fa1d671ee5a3b5cf, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 0.22
       objectReference: {fileID: 0}
     - target: {fileID: 1550100564692168711, guid: e9b6538afdd23374fa1d671ee5a3b5cf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

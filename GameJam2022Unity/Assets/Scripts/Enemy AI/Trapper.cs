@@ -4,24 +4,21 @@ using UnityEngine;
 
 public class Trapper : MonoBehaviour
 {
-    [SerializeField] public float attackDistance = 10.0f;
+    [SerializeField] public float attackDistance = 15.0f;
     [SerializeField] public GameObject trap;
     [SerializeField] public float noticePlayerJumpForce = 100.0f;
     [SerializeField] public float m_MovementSmoothing = 0.05f;
-    [SerializeField] private float m_MovementSpeed = 5f;
+    //[SerializeField] private float m_MovementSpeed = 5f;
     [SerializeField] private Transform m_GroundCheck;
     [SerializeField] private Transform m_GroundCheck2;
     [SerializeField] private LayerMask m_WhatIsGround;                          // A mask determining what is ground to the character
-    [SerializeField] private int maxCoyoteTime = 2;
 
     const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
     private GameObject trapInstance = null;
-    private bool m_FacingRight = false;
+    private bool m_FacingRight = true;
     private Rigidbody2D rbody;
     private bool mCanSeePlayer = false;
     private Vector3 m_Velocity = Vector3.zero;
-    private bool m_Grounded;
-    private int coyoteTime = 0;
     
 
     // Start is called before the first frame update
@@ -50,8 +47,7 @@ public class Trapper : MonoBehaviour
         {
             if (mCanSeePlayer == false)
             {
-                // Add a jump to the boar as it has noticed the player
-                rbody.AddForce(new Vector2(0f, noticePlayerJumpForce));
+                //rbody.AddForce(new Vector2(0f, noticePlayerJumpForce));
             }
             mCanSeePlayer = true;
             //We've seen the player, make sure we're facing in the right direction
@@ -67,10 +63,12 @@ public class Trapper : MonoBehaviour
             //If the player is close enough to attack
             if (Vector3.Magnitude(hit.transform.position - transform.position) < attackDistance)
             {
-                //Debug.Log("Pig attacking!");
+                //Debug.Log("Trapper attacking!");
                 if (trapInstance == null)
                 {
                     LayTrap(hit);
+                    // Add a jump to the trapper to signify laying the trap
+                    rbody.AddForce(new Vector2(0f, noticePlayerJumpForce));
                 }
             }
             else
