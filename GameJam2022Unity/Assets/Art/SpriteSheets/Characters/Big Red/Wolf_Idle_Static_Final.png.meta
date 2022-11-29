@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b1c4317ef70a2c04fad2a00eaca00246
+guid: ba688b34739689648899d8911f7dc083
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 46
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -105,169 +105,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WolfRunP1_Colored_Final 1_0
+      name: Wolf_Idle_Static_Final_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 3
         width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 43
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc4012c3ea190ef4da901292b1638cc3
-      internalID: 10049824
+      spriteID: 8ca28262164d4414bbd62b168bbb7d32
+      internalID: -433944690
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfRunP1_Colored_Final 1_1
+      name: Wolf_Idle_Static_Final_1
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 3
         width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 43
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 091e9a3af19b9224595ec796fb018545
-      internalID: -1866086239
+      spriteID: 230250bc2424f03488651bbb90a9c1ca
+      internalID: -786079447
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfRunP1_Colored_Final 1_2
+      name: Wolf_Idle_Static_Final_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 0
+        y: 3
         width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 43
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19189c9fa3c419040a663a859c1aa467
-      internalID: 1135657110
+      spriteID: eea36e22e1de1154fa90744f5cf12df5
+      internalID: 50240606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfRunP1_Colored_Final 1_3
+      name: Wolf_Idle_Static_Final_3
       rect:
         serializedVersion: 2
         x: 192
-        y: 0
+        y: 3
         width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 43
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17a5410c467e9d44eabc3713387b137c
-      internalID: 207656876
+      spriteID: bcf009b89f0b56f45865da1dcc024a2d
+      internalID: -498950733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfRunP1_Colored_Final 1_4
+      name: Wolf_Idle_Static_Final_4
       rect:
         serializedVersion: 2
         x: 256
-        y: 0
+        y: 3
         width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 43
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc75f20ef2fc6014e999e959daff74cc
-      internalID: 1997953687
+      spriteID: 82f72ed486c328e48ad6954b8dd825f3
+      internalID: -277581200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WolfRunP1_Colored_Final 1_5
+      name: Wolf_Idle_Static_Final_5
       rect:
         serializedVersion: 2
         x: 320
-        y: 0
+        y: 3
         width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 43
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9402416fe3e8526408865fdd8bf1c645
-      internalID: -1734793605
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfRunP1_Colored_Final 1_6
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc684c2292f14c64ea29edf20082709f
-      internalID: -345485056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WolfRunP1_Colored_Final 1_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9726076faec5f6145922bf299868e328
-      internalID: 2008821143
+      spriteID: 42aa7bccb4a5be74e8b17e0c3b775b83
+      internalID: -1622012598
       vertices: []
       indices: 
       edges: []
@@ -283,14 +241,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WolfRunP1_Colored_Final 1_6: -345485056
-      WolfRunP1_Colored_Final 1_3: 207656876
-      WolfRunP1_Colored_Final 1_2: 1135657110
-      WolfRunP1_Colored_Final 1_0: 10049824
-      WolfRunP1_Colored_Final 1_5: -1734793605
-      WolfRunP1_Colored_Final 1_4: 1997953687
-      WolfRunP1_Colored_Final 1_7: 2008821143
-      WolfRunP1_Colored_Final 1_1: -1866086239
+      Wolf_Idle_Static_Final_4: -277581200
+      Wolf_Idle_Static_Final_0: -433944690
+      Wolf_Idle_Static_Final_2: 50240606
+      Wolf_Idle_Static_Final_1: -786079447
+      Wolf_Idle_Static_Final_3: -498950733
+      Wolf_Idle_Static_Final_5: -1622012598
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
