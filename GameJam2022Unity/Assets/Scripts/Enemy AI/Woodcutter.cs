@@ -41,6 +41,13 @@ public class Woodcutter : MonoBehaviour
     const int chargeTime = 50;
     const int prepareJumpForce = 1000;
 
+    //Axe throw variables
+    const int throwTime = 100;
+    private GameObject mAxe = null;
+    private Vector3 mAxeStartPosition;
+    private Transform mAxeTargetPosition = null;
+
+
     private enum states
     {
         trapping,
@@ -60,7 +67,7 @@ public class Woodcutter : MonoBehaviour
     void Start()
     {
         mCurrentState = states.none;
-        mTargetPosition = leftSide;
+        mTargetPosition = rightSide;
     }
 
     private void FixedUpdate()
@@ -87,6 +94,10 @@ public class Woodcutter : MonoBehaviour
                 HandleTrapping();
                 break;
 
+            case states.throwingAxe:
+                HandleAxeThrow();
+                break;
+
             case states.charging:
                 HandleCharging();
                 break;
@@ -104,7 +115,7 @@ public class Woodcutter : MonoBehaviour
 
     private void PickNextAttack()
     {
-        mNextState = states.charging;
+        mNextState = states.throwingAxe;
         mCurrentState = states.moving;
         return;
         bool valid = false;
@@ -203,6 +214,48 @@ public class Woodcutter : MonoBehaviour
             mInAttack = false;
             PickNextAttack();
         }
+    }
+
+    void HandleAxeThrow()
+    {
+        if (mInAttack == false)
+        {
+            mInAttack = true;
+            mCurrentAttackTimer = throwTime;
+            mAxe = Instantiate(axe, mTargetPosition.position, Quaternion.identity);
+            mAxeStartPosition = mAxe.transform.position;
+            if (mTargetPosition == leftSide)
+            {
+                mAxeTargetPosition = rightSide;
+            }
+            else
+            {
+                mAxeTargetPosition = leftSide;
+            }
+        }
+
+        mCurrentAttackTimer--;
+
+        if (mCurrentAttackTimer > throwTime/2)
+        {
+            mAxe.transform.position = mAxeStartPosition +
+                (mAxeTargetPosition.position - mAxeStartPosition) * ((((float)throwTime/2.0f) - ((float)mCurrentAttackTimer - ((float)throwTime / 2.0f))) / ((float)throwTime/2.0f));
+        }
+        else
+        {
+            mAxe.transform.position = mAxeTargetPosition.position +
+                (mAxeStartPosition - mAxeTargetPosition.position) * ((((float)throwTime/2.0f) - (float)mCurrentAttackTimer) / ((float)throwTime/2.0f));
+        }
+
+        if (mCurrentAttackTimer < 0)
+        {
+            Destroy(mAxe);
+            mAxe = null;
+            mInAttack = false;
+            PickNextAttack();
+        }
+
+
     }
 
     void HandleMovement()
