@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwapCharacterComponent : MonoBehaviour
+public class SwapCharacterComponent : MonoBehaviour, IPauseable
 {
     [SerializeField]
     List<GameObject> mCharacters = new List<GameObject>();

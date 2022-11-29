@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boar : MonoBehaviour
 {
-    [SerializeField] public int attackDistance = 3;
+    [SerializeField] public float attackDistance = 3.0f;
     [SerializeField] public GameObject chargeAttack;
     [SerializeField] public float noticePlayerJumpForce = 100.0f;
     [SerializeField] public float m_MovementSmoothing = 0.05f;
@@ -48,6 +48,8 @@ public class Boar : MonoBehaviour
         //Check if the enemy can see the player
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, player.transform.position - transform.position);
+        if (hit.collider == null)
+            return;
         if (hit.collider.gameObject.tag == "Player")
         {
             if (mCanSeePlayer == false)

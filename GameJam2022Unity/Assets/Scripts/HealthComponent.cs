@@ -5,9 +5,9 @@ using UnityEngine;
 public class HealthComponent : MonoBehaviour
 {
     [SerializeField]
-    public int MaxHealth;
+    public float MaxHealth;
 
-    public int CurrHealth { get; protected set; }
+    public float CurrHealth { get; protected set; }
 
     public void Start()
     {
@@ -15,7 +15,7 @@ public class HealthComponent : MonoBehaviour
     }
 
     // returns true if still alive after damage
-    public bool TakeDamage (int damage) {
+    public bool TakeDamage (float damage) {
         if (CurrHealth > 0)
         {
             CurrHealth -= damage;

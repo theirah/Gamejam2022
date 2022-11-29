@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8139939966300980745}
-  - component: {fileID: 491072058926627648}
+  - component: {fileID: 9069093001706853798}
   m_Layer: 0
   m_Name: Boar
   m_TagString: Untagged
@@ -65,7 +65,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &491072058926627648
+--- !u!50 &9069093001706853798
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -84,8 +84,8 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &5006997345836212165
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,8 +132,8 @@ GameObject:
   - component: {fileID: 1880104481819439004}
   - component: {fileID: 7298476077007463890}
   - component: {fileID: 222892815302789262}
-  - component: {fileID: 1259387683759936744}
-  m_Layer: 0
+  - component: {fileID: 5402253230745581823}
+  m_Layer: 8
   m_Name: PlaceholderBoar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   maxCoyoteTime: 2
-  visualRepresentation: {fileID: 0}
 --- !u!70 &222892815302789262
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -296,7 +295,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.6, y: 0.4}
   m_Direction: 1
---- !u!255 &1259387683759936744
+--- !u!255 &5402253230745581823
 FixedJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,7 +305,7 @@ FixedJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 491072058926627648}
+  m_ConnectedRigidBody: {fileID: 9069093001706853798}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1

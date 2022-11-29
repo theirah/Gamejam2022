@@ -15,7 +15,7 @@ public class Hitbox : MonoBehaviour
 {
     //Class contains data about the attack, i.e. attacker, damage and so on
     public DamageSources damageType;
-    public int damage;
+    public float damage;
     //Potential other details we could add: Knockback force, hitstun
 
     // Start is called before the first frame update
