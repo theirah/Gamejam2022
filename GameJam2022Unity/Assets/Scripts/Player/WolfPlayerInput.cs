@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,11 @@ public class WolfPlayerInput : MonoBehaviour, IPauseable
     protected bool mJump;
 
     protected InteractorComponent mInteractorComponent;
+
+    float EPSILON = .1f;
+
+    public Action<bool, float> isMovingHorizontally;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -37,6 +43,7 @@ public class WolfPlayerInput : MonoBehaviour, IPauseable
     // Update is called once per frame
     void FixedUpdate()
     {
+        isMovingHorizontally.Invoke(Math.Abs(mHorizontalMovement) > EPSILON, mHorizontalMovement);
         mControllerComponent.Move(mHorizontalMovement * Time.fixedDeltaTime, false, mJump);
         mJump = false;
     }
