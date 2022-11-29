@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 201d47f7655381440a742a8649c7d0c0
+guid: 9f94c94d449e1064893ab220453ae7f6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Wolf_Idle_Final_0
+      name: T_Wolf_Idle_Dark_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90972be118f2c774799c037b846a8bda
-      internalID: 536900895
+      spriteID: dc6580abc7b43d94ca602b75512c4365
+      internalID: 1383243788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wolf_Idle_Final_1
+      name: T_Wolf_Idle_Dark_1
       rect:
         serializedVersion: 2
         x: 64
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27debdf6dd930e64794ab9b6acea11d3
-      internalID: 330831558
+      spriteID: 40973f317b4c3e4469eabba95bdccd51
+      internalID: -1588420664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wolf_Idle_Final_2
+      name: T_Wolf_Idle_Dark_2
       rect:
         serializedVersion: 2
         x: 128
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6acf0b0cd223418498c1590480a293c7
-      internalID: -407399778
+      spriteID: f061ec9946bd4704cb9adf77da53a8bb
+      internalID: 1599882806
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wolf_Idle_Final_3
+      name: T_Wolf_Idle_Dark_3
       rect:
         serializedVersion: 2
         x: 192
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f78f6d3135ab2b469c7887e75b8ad24
-      internalID: 1324767119
+      spriteID: 1da3d2289b8aff44284cda5a042ac1ce
+      internalID: 1830791582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wolf_Idle_Final_4
+      name: T_Wolf_Idle_Dark_4
       rect:
         serializedVersion: 2
         x: 256
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e4dffdffa086ed448d0804adae0dbbb
-      internalID: -402387795
+      spriteID: e74c37db54101bf4785c2382888ad6ef
+      internalID: -594014648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wolf_Idle_Final_5
+      name: T_Wolf_Idle_Dark_5
       rect:
         serializedVersion: 2
         x: 320
@@ -224,14 +224,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c840958d981a3a341ae52f2312c26f85
-      internalID: 1317225937
+      spriteID: 203655ecb06374f4ebf676c527f6d97b
+      internalID: -1336575371
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wolf_Idle_Final_6
+      name: T_Wolf_Idle_Dark_6
       rect:
         serializedVersion: 2
         x: 384
@@ -245,29 +245,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f331f8fe9fb9fe44cbfa233dfb66c7ed
-      internalID: 952051673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Wolf_Idle_Final_7
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 111b604dcc95db646bdfec6b3dbe9992
-      internalID: -489865412
+      spriteID: 972e7d4a1a95f9b44ad9479099e8b0b4
+      internalID: -372802359
       vertices: []
       indices: 
       edges: []
@@ -283,14 +262,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Wolf_Idle_Final_7: -489865412
-      Wolf_Idle_Final_4: -402387795
-      Wolf_Idle_Final_1: 330831558
-      Wolf_Idle_Final_2: -407399778
-      Wolf_Idle_Final_5: 1317225937
-      Wolf_Idle_Final_6: 952051673
-      Wolf_Idle_Final_3: 1324767119
-      Wolf_Idle_Final_0: 536900895
+      T_Wolf_Idle_Dark_4: -594014648
+      T_Wolf_Idle_Dark_5: -1336575371
+      T_Wolf_Idle_Dark_6: -372802359
+      T_Wolf_Idle_Dark_0: 1383243788
+      T_Wolf_Idle_Dark_2: 1599882806
+      T_Wolf_Idle_Dark_1: -1588420664
+      T_Wolf_Idle_Dark_3: 1830791582
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

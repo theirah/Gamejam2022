@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwapCharacterComponent : MonoBehaviour, IPauseable
 {
+    AudioManager audioManager;
+
     [SerializeField]
     List<GameObject> mCharacters = new List<GameObject>();
 
@@ -11,6 +13,7 @@ public class SwapCharacterComponent : MonoBehaviour, IPauseable
     // Start is called before the first frame update
     void Awake()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         if(mCharacters.Count < 1)
         {
             Debug.LogWarning("Not enough characters to swap between! Num: " + mCharacters.Count);
@@ -26,6 +29,8 @@ public class SwapCharacterComponent : MonoBehaviour, IPauseable
     // Update is called once per frame
     void Update()
     {
+        //mCurrIndex 0 is Red, 1 is wolf
+
         if(Input.GetButtonDown("SwapCharacter"))
         {
             GameObject oldChar = mCharacters[mCurrIndex];
@@ -41,7 +46,11 @@ public class SwapCharacterComponent : MonoBehaviour, IPauseable
             {
                 newCharacterController.CopyStatus(oldCharacterController);
             }
-
+            //Plays appropriate music fade and character swap sound effect.
+            if (mCurrIndex == 0)
+                audioManager.SwitchToRed();
+            else if (mCurrIndex == 1)
+                audioManager.SwitchToWolf();
         }
     }
 }
