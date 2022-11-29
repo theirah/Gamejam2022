@@ -29,7 +29,6 @@ public class CharacterController2D : MonoBehaviour
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
-
 	public void CopyStatus(CharacterController2D other)
 	{
 		m_Grounded = other.m_Grounded;
