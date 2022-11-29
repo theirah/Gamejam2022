@@ -63,6 +63,8 @@ public class AudioManager : MonoBehaviour
     private int maxLevel = 2;       //Maximum non-boss stage
     private bool bossLevel = false;
 
+    private bool fadeMenuMusic = false;
+
     private bool isRed = true;       //keeps track of current character
 
     private int fadeCounter = 0;        //keeps counting each frame until fade in/fade out is finished
@@ -91,8 +93,8 @@ public class AudioManager : MonoBehaviour
         {
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
-                PlayGame();
                 MusicVolumeReset();
+                StartStage1();
             }
         }
     }
@@ -119,6 +121,12 @@ public class AudioManager : MonoBehaviour
     }
     //Starts first level music
     public void PlayGame()
+    {
+        fadeMenuMusic = true;
+        advancingLevel = true;
+        PlaySoundEffect(soundEffect.MENUSTART);
+    }
+    private void StartStage1()
     {
         if (menuMusic)
             menuMusic.Stop();
@@ -273,29 +281,34 @@ public class AudioManager : MonoBehaviour
     {
         float volume = volumeSlider.value;
         float attenuationValue = Mathf.Log10(volume) * 20;
+        float musicVolume = musicVolumeSlider.value;
+        float attenuationValueMusic = Mathf.Log10(musicVolume) * 20;
 
         if (muteToggle.isOn)
         {
             audioMixer.SetFloat("musicVol", -1000000000f);
+            audioMixer.SetFloat("soundFXVol", -1000000000f);
         }
         else
         {
-            audioMixer.SetFloat("musicVol", attenuationValue);
+            audioMixer.SetFloat("musicVol", attenuationValueMusic);
+            audioMixer.SetFloat("soundFXVol", attenuationValue);
         }
 
     }
     public void AdjustMusicVolume()
     {
+        muteToggle.isOn = false;
         float volume = musicVolumeSlider.value;
         float attenuationValue = Mathf.Log10(volume) * 20f;
         if (musicVolumeSlider.value < .01f)
             attenuationValue = -1000f;
 
         audioMixer.SetFloat("musicVol", attenuationValue);
-        Debug.Log("adjust music");
     }
     public void AdjustVolume()
     {
+        muteToggle.isOn = false;
         float volume = volumeSlider.value;
         float attenuationValue = Mathf.Log10(volume) * 20f;
         if (volumeSlider.value < .01f)
@@ -364,6 +377,13 @@ public class AudioManager : MonoBehaviour
         {
             if (fadeCounter >= fadeCounterMax)
             {
+                if (fadeMenuMusic)
+                {
+                    menuMusic.Stop();
+                    fadeMenuMusic = false;
+                    advancingLevel = false;
+                }
+
                 if (bossLevel)
                     stage3BossMusic.Stop();
                 else if (currentLevel == 1)
@@ -379,6 +399,12 @@ public class AudioManager : MonoBehaviour
                 advancingLevel = false;
                 AdvanceLevel();
 
+            }
+
+            else if (fadeMenuMusic)
+            {
+                if (menuMusic.volume >= volumeIncrement)
+                    menuMusic.volume -= volumeIncrement;
             }
 
             else if (bossLevel && stage3BossMusic)
