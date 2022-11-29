@@ -47,6 +47,21 @@ public class Woodcutter : MonoBehaviour
     private Vector3 mAxeStartPosition;
     private Transform mAxeTargetPosition = null;
 
+    //Grenade variables
+    const float throwStrength = 10.0f;
+    const int bombTime = 300;
+
+    //Fire Variables
+    const int fireTime = 120;
+    const int numberOfFlames = 10;
+    private int mCurrentFlame = 0;
+    private Vector3 mFireStartPosition;
+    private Transform mFireTargetPosition = null;
+
+    //Swinging variables
+    const int swingTime = 60;
+    private GameObject mAxeSwing = null;
+
 
     private enum states
     {
@@ -98,8 +113,20 @@ public class Woodcutter : MonoBehaviour
                 HandleAxeThrow();
                 break;
 
+            case states.bombing:
+                HandleBombing();
+                break;
+
             case states.charging:
                 HandleCharging();
+                break;
+
+            case states.spreadFire:
+                HandleSpreadFire();
+                break;
+
+            case states.swinging:
+                HandleSwinging();
                 break;
 
             case states.moving:
@@ -115,9 +142,6 @@ public class Woodcutter : MonoBehaviour
 
     private void PickNextAttack()
     {
-        mNextState = states.throwingAxe;
-        mCurrentState = states.moving;
-        return;
         bool valid = false;
         while (valid == false)
         {
@@ -254,8 +278,117 @@ public class Woodcutter : MonoBehaviour
             mInAttack = false;
             PickNextAttack();
         }
+    }
 
+    void HandleBombing()
+    {
+        if (mInAttack == false)
+        {
+            mInAttack = true;
+            mCurrentAttackTimer = bombTime;
+        }
 
+        if (mCurrentAttackTimer % 50 == 0)
+        {
+            Vector3 offset;
+            int direct;
+            if (mFacingRight)
+            {
+                offset = new Vector3(2, 0);
+                direct = 1;
+            }
+            else
+            {
+                offset = new Vector3(-2, 0);
+                direct = -1;
+            }
+            float y = Random.Range(-1f, 1f);
+            Vector3 direction = new Vector3(direct, y).normalized;
+            float angleInRadians = Mathf.Atan2(direction.y, direction.x);
+            float angle = Mathf.Rad2Deg * angleInRadians;
+            Quaternion rot = Quaternion.Euler(0, 0, angle);
+            GameObject bomb = Instantiate(grenade, transform.position + offset, rot);
+            float strength = Random.Range(0f, throwStrength);
+            Rigidbody2D rbody = bomb.transform.GetChild(0).GetComponent<Rigidbody2D>();
+            rbody.velocity = bomb.transform.rotation * (strength * new Vector3(1, 0, 0));
+        }
+
+        mCurrentAttackTimer--;
+
+        if (mCurrentAttackTimer < 0)
+        {
+            mInAttack = false;
+            PickNextAttack();
+        }
+    }
+
+    void HandleSpreadFire()
+    {
+        if (mInAttack == false)
+        {
+            mInAttack = true;
+            mCurrentAttackTimer = fireTime;
+            mCurrentFlame = 0;
+            mFireStartPosition = mTargetPosition.position;
+            if (mTargetPosition == leftSide)
+            {
+                mFireTargetPosition = rightSide;
+            }
+            else
+            {
+                mFireTargetPosition = leftSide;
+            }
+        }
+
+        if (mCurrentAttackTimer % (fireTime/(numberOfFlames + 2)) == 0)
+        {
+            Vector3 yOffset = Vector3.down * 1.0f;
+            Vector3 pos = mFireStartPosition + (mFireTargetPosition.position - mFireStartPosition) * ((float)mCurrentFlame/(float)numberOfFlames);
+            Instantiate(fire, pos + yOffset, Quaternion.identity);
+            mCurrentFlame++;
+        }
+
+        mCurrentAttackTimer--;
+
+        if (mCurrentAttackTimer < 0)
+        {
+            mInAttack = false;
+            PickNextAttack();
+        }
+    }
+
+    void HandleSwinging()
+    {
+        if (mInAttack == false)
+        {
+            mInAttack = true;
+            mCurrentAttackTimer = swingTime;
+            mAxeSwing = Instantiate(swing, transform);
+        }
+
+        mCurrentAttackTimer--;
+        if (mInSecondPhase)
+        {
+            if (mFacingRight)
+                transform.position = transform.position + Vector3.right / 7;
+            else
+                transform.position = transform.position + Vector3.left / 7;
+        }
+        else
+        {
+            if (mFacingRight)
+                transform.position = transform.position + Vector3.right / 10;
+            else
+                transform.position = transform.position + Vector3.left / 10;
+        }
+
+        if (mCurrentAttackTimer < 0)
+        {
+            Destroy(mAxeSwing); 
+            mAxeSwing = null;
+            mInAttack = false;
+            PickNextAttack();
+        }
     }
 
     void HandleMovement()

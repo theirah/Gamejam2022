@@ -148,9 +148,9 @@ MonoBehaviour:
   phase1Trap: {fileID: 739789074709708636, guid: 5867e4db06c18484e9ee148168c43f53, type: 3}
   phase2Trap: {fileID: 0}
   axe: {fileID: 4203410219162730774, guid: 9bc18b5c41dc94a41928d65debdefba3, type: 3}
-  fire: {fileID: 0}
-  swing: {fileID: 0}
-  grenade: {fileID: 0}
+  fire: {fileID: 8555447609046666716, guid: 250cc0c12a57af049b070ccc03f6d219, type: 3}
+  swing: {fileID: 5821186587907409046, guid: 786ede1bcace2c64d9769a0f10854b15, type: 3}
+  grenade: {fileID: 4111017689598640742, guid: 7b173c305f48ef8418d1d14dc8b0d126, type: 3}
 --- !u!114 &4358943739816784525
 MonoBehaviour:
   m_ObjectHideFlags: 0
