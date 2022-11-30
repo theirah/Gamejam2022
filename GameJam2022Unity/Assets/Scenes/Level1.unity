@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2702,7 +2702,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: b343011af0ca96945bd5412cccf7f5bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7387ce4a779f3b94fb0a57073995a927, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3260,7 +3260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: 3.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3280,9 +3280,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 185140636}
-  xMargin: 0.2
+  leftMargin: 0.3
+  rightMargin: 0.4
   topMargin: 0.2
-  bottomMargin: 0.4
+  bottomMargin: 0.2
 --- !u!1 &1008594334
 GameObject:
   m_ObjectHideFlags: 0
@@ -5257,7 +5258,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: b343011af0ca96945bd5412cccf7f5bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7387ce4a779f3b94fb0a57073995a927, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5294,7 +5295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763892219}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 1}
+  m_LocalPosition: {x: 0, y: 1.4, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5344,7 +5345,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: b343011af0ca96945bd5412cccf7f5bc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7387ce4a779f3b94fb0a57073995a927, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6240,11 +6241,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004d719703e49414d9fbeb5b83d661ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundTile: {fileID: 11400000, guid: dbc99129e1cb2ae4a89dbf9026337cc2, type: 2}
-  groundSlopeUpTile: {fileID: 11400000, guid: fe2ea12eb4ba3eb45946d386c3279b67, type: 2}
-  groundSlopeDownTile: {fileID: 11400000, guid: 7807fbf6adc58fc4f9de394719992df4, type: 2}
+  groundTiles:
+  - {fileID: 11400000, guid: 0beba4d0231475242b48452c40222405, type: 2}
+  - {fileID: 11400000, guid: 5d65c588c034b6e4996830fddf078833, type: 2}
+  - {fileID: 11400000, guid: 2943d21e32afecb428cebb8a1e40c899, type: 2}
+  soilTile: {fileID: 11400000, guid: d1fcc34535bbaa743ad979e89bd90354, type: 2}
+  groundSlopeUpTile: {fileID: 11400000, guid: 1e90b906ed4e3bd4fab34c49aaa9d76a, type: 2}
+  groundSlopeDownTile: {fileID: 11400000, guid: 2db5df2cc9b0397468276c2486c27552, type: 2}
   invisibleWall: {fileID: 11400000, guid: cdcffe637bbcd584f89ecaa585c61bde, type: 2}
-  platformTile: {fileID: 11400000, guid: dbc99129e1cb2ae4a89dbf9026337cc2, type: 2}
+  platformTile: {fileID: 11400000, guid: 5d65c588c034b6e4996830fddf078833, type: 2}
   stageSize: 200
   leftSize: 20
   invisibleWallHeight: 20
@@ -6411,7 +6416,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2073514896}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: -0.3, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

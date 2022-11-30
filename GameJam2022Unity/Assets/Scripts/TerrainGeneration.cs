@@ -6,7 +6,8 @@ using UnityEngine.UIElements;
 
 public class TerrainGeneration : MonoBehaviour
 {
-    public Tile groundTile;
+    public Tile[] groundTiles;
+    public Tile soilTile;
     public Tile groundSlopeUpTile;
     public Tile groundSlopeDownTile;
     public Tile invisibleWall;
@@ -43,9 +44,10 @@ public class TerrainGeneration : MonoBehaviour
         //Draw ground from left to the spawn position
         for (int i = -leftSize; i < generationStartPoint; i++)
         {
-            for (int j = 0; j > -gridDepth; j--)
+            map.SetTile(new Vector3Int(i, 0), soilTile);
+            for (int j = -1; j > -gridDepth; j--)
             {
-                map.SetTile(new Vector3Int(i, j), groundTile);
+                map.SetTile(new Vector3Int(i, j), GetTile());
             }
         }
         int currentHeight = 0;
@@ -71,6 +73,8 @@ public class TerrainGeneration : MonoBehaviour
                 wentDown = false;
                 //Add slope tile
                 map.SetTile(new Vector3Int(i - 1, currentHeight), groundSlopeUpTile);
+                //Replace previous tile with dirt
+                map.SetTile(new Vector3Int(i - 1, currentHeight- 1), GetTile());
             }
             else
             {
@@ -78,9 +82,16 @@ public class TerrainGeneration : MonoBehaviour
                 wentUp = false;
             }
             //Fill in ground, all the way to the bottom
-            for (int j = currentHeight; j > -gridDepth; j--)
+            Tile topTile;
+            if (!wentDown)
+                topTile = soilTile;
+            else
+                topTile = GetTile();
+            map.SetTile(new Vector3Int(i, currentHeight), topTile);
+
+            for (int j = currentHeight - 1; j > -gridDepth; j--)
             {
-                map.SetTile(new Vector3Int(i, j), groundTile);
+                map.SetTile(new Vector3Int(i, j), GetTile());
             }
         }
 
@@ -131,6 +142,12 @@ public class TerrainGeneration : MonoBehaviour
                 }
             }
         }
+    }
+
+    private Tile GetTile()
+    {
+        int i = Random.Range(0, groundTiles.Length);
+        return groundTiles[i];
     }
 
     void SpawnPlatform(int x, int y)
