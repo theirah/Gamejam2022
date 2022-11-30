@@ -29,7 +29,11 @@ public class TerrainGeneration : MonoBehaviour
     //Variables for objects
     public GameObject tree;
     public GameObject endLevelObject;
+    public GameObject berryBush;
+    public int berryBushHeight = 2;
     public int treeSpawnHeight = 4;
+    public int noBerryBushes = 3;
+    public List<int> bushPoses = new();
     public float treeSpawnDepth = 1.5f;
     public float minTreeSpacing = 10;       //The minimum distance after which another tree can spawn
 
@@ -61,6 +65,16 @@ public class TerrainGeneration : MonoBehaviour
     private void SpawnTiles()
     {
         map = GetComponent<Tilemap>();
+
+        //Choose random positions for the berry bushes
+        for (int i = 0; i < noBerryBushes; i++)
+        {
+            int pos = Random.Range(0, stageSize);
+            if (bushPoses.Contains(pos))
+                i--;
+            else
+                bushPoses.Add(pos);
+        }
 
         //Draw invisible walls at edge
         for (int i = -gridDepth; i < invisibleWallHeight; i++)
@@ -120,6 +134,23 @@ public class TerrainGeneration : MonoBehaviour
             for (int j = currentHeight - 1; j > -gridDepth; j--)
             {
                 map.SetTile(new Vector3Int(i, j), GetTile());
+            }
+
+            //Check if we need to spawn a bush
+            if (bushPoses.Contains(i))
+            {
+                if (wentDown)
+                {
+                    //We can only spawn on flat ground, so if we've gone down, push spawning back a cell
+                    bushPoses.Remove(i);
+                    bushPoses.Add(i+ 1);
+                }
+                else
+                {
+                    Instantiate(berryBush, new Vector3(i, currentHeight + berryBushHeight), Quaternion.identity);
+                    //Set flag so we know the height won't change and spawn a slope
+                    wentDown = true;
+                }
             }
         }
 
