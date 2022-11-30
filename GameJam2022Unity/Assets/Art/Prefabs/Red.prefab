@@ -75,7 +75,6 @@ GameObject:
   - component: {fileID: 5364866167705670012}
   - component: {fileID: 5364866167705670013}
   - component: {fileID: 5364866167705670001}
-  - component: {fileID: 5364866167705670000}
   - component: {fileID: -7894173396008061536}
   - component: {fileID: 1285803803972166382}
   - component: {fileID: -8926441373028904260}
@@ -84,6 +83,7 @@ GameObject:
   - component: {fileID: -2550436382406676740}
   - component: {fileID: 1167463133208286228}
   - component: {fileID: 4842100628227558458}
+  - component: {fileID: 4635311813653964019}
   m_Layer: 6
   m_Name: Red
   m_TagString: Player
@@ -149,7 +149,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 2055351785, guid: 6ac7bbf4de52b7c40be7c37a5d9b670f, type: 3}
+  m_Sprite: {fileID: -423520337, guid: 4b62eeb921e137d44976abf652214a38, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -225,19 +225,6 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5364866167705670000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5364866166488312474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8897b4e03e7f1f6439ae391683a127e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mRunSpeed: 36
 --- !u!95 &-7894173396008061536
 Animator:
   serializedVersion: 4
@@ -353,4 +340,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: -7894173396008061536}
-  playerInput: {fileID: 5364866167705670000}
+  playerInput: {fileID: 4635311813653964019}
+--- !u!114 &4635311813653964019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5364866166488312474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73312be9c02c53e46a4f399988453e41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mRunSpeed: 36

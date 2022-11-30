@@ -8,7 +8,7 @@ public class RedAnimationStateUpdater : MonoBehaviour
     Animator animator;
 
     [SerializeField]
-    RedPlayerInput playerInput;
+    PlayerInputComponent playerInput;
 
     bool mIsMovingHorizontally;
 

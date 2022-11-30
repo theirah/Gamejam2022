@@ -38,15 +38,10 @@ public class BecomeTrapped : MonoBehaviour
         {
             control.enabled = false;
         }
-        RedPlayerInput red = GetComponent<RedPlayerInput>();
-        if (red != null)
+        PlayerInputComponent playerinput = GetComponent<PlayerInputComponent>();
+        if (playerinput != null)
         {
-            red.enabled = false;
-        }
-        WolfPlayerInput wolf = GetComponent<WolfPlayerInput>();
-        if (wolf != null)
-        {
-            wolf.enabled = false;
+            playerinput.enabled = false;
         }
         SwapCharacterComponent swap = transform.parent.GetComponent<SwapCharacterComponent>();
         if (swap != null)
@@ -74,15 +69,10 @@ public class BecomeTrapped : MonoBehaviour
                     {
                         control.enabled = true;
                     }
-                    RedPlayerInput red = GetComponent<RedPlayerInput>();
-                    if (red != null)
+                    PlayerInputComponent playerinput = GetComponent<PlayerInputComponent>();
+                    if (playerinput != null)
                     {
-                        red.enabled = true;
-                    }
-                    WolfPlayerInput wolf = GetComponent<WolfPlayerInput>();
-                    if (wolf != null)
-                    {
-                        wolf.enabled = true;
+                        playerinput.enabled = true;
                     }
                     SwapCharacterComponent swap = transform.parent.GetComponent<SwapCharacterComponent>();
                     if (swap != null)

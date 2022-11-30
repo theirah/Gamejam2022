@@ -8,7 +8,7 @@ public class WolfAnimationStateUpdater : MonoBehaviour
     Animator animator;
 
     [SerializeField]
-    WolfPlayerInput playerInput;
+    PlayerInputComponent playerInput;
 
     bool mIsMovingHorizontally;
 
