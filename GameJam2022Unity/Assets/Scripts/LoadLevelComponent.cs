@@ -11,6 +11,7 @@ public class LoadLevelComponent : MonoBehaviour
             AudioManager audioManager = FindObjectOfType<AudioManager>();
             audioManager.StageEnd();
             SceneManager.LoadScene(levelName);
+
         }
     }
 }
