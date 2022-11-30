@@ -69,6 +69,7 @@ public class AudioManager : MonoBehaviour
 
     private int fadeCounter = 0;        //keeps counting each frame until fade in/fade out is finished
     private int fadeCounterMax = 100;   //when to stop the fade
+    private int fadeCounterMaxSlow = 500; //for slower fadeouts
 
     private float musicDefaultVolume = 1f;  //Needs to be balanced to sound effect levels
 
@@ -89,6 +90,7 @@ public class AudioManager : MonoBehaviour
     //Starts playing menu music
     private void Awake()
     {
+        DontDestroyOnLoad(transform.gameObject);
         if (menuMusic)
         {
             if (SceneManager.GetActiveScene().buildIndex == 1)

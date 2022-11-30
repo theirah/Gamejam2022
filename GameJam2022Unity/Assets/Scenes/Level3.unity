@@ -1978,7 +1978,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 17274629219791556, guid: 40a7307ee998b09439e42e4f143f9d6c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 7e2701fe0621a594bb330b372548ae99, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -3280,7 +3280,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 185140636}
-  xMargin: 0.2
+  leftMargin: 0.2
+  rightMargin: 0.2
   topMargin: 0.2
   bottomMargin: 0.4
 --- !u!1 &1008594334
@@ -3860,7 +3861,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 17274629219791556, guid: 40a7307ee998b09439e42e4f143f9d6c, type: 2}
   m_audioClip: {fileID: 8300000, guid: aa6c22680d1258f4aba5dc6d2d066541, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0
   m_Pitch: 1
   Loop: 1
@@ -6126,13 +6127,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 004d719703e49414d9fbeb5b83d661ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundTile: {fileID: 11400000, guid: dbc99129e1cb2ae4a89dbf9026337cc2, type: 2}
+  groundTiles: []
+  soilTile: {fileID: 0}
   groundSlopeUpTile: {fileID: 11400000, guid: fe2ea12eb4ba3eb45946d386c3279b67, type: 2}
   groundSlopeDownTile: {fileID: 11400000, guid: 7807fbf6adc58fc4f9de394719992df4, type: 2}
   invisibleWall: {fileID: 11400000, guid: cdcffe637bbcd584f89ecaa585c61bde, type: 2}
   platformTile: {fileID: 11400000, guid: dbc99129e1cb2ae4a89dbf9026337cc2, type: 2}
   stageSize: 200
-  leftSize: 20
+  edgeSize: 20
   invisibleWallHeight: 20
   gridDepth: 10
   generationStartPoint: 5
@@ -6143,6 +6145,11 @@ MonoBehaviour:
   platformsToSpawn: 15
   platformsSize: 3
   platformSpacing: 3
+  tree: {fileID: 0}
+  endLevelObject: {fileID: 0}
+  treeSpawnHeight: 4
+  treeSpawnDepth: 1.5
+  minTreeSpacing: 10
 --- !u!1 &2069575951
 GameObject:
   m_ObjectHideFlags: 0
@@ -6514,7 +6521,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 17274629219791556, guid: 40a7307ee998b09439e42e4f143f9d6c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0c54256c41e992844b27c989fe22eb8e, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
   Loop: 1
