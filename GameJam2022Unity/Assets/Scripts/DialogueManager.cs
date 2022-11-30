@@ -12,10 +12,34 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
+    protected Queue<Dialogue> mDialogues = new Queue<Dialogue>();
     private Queue<string> sentences = new Queue<string>();
-    protected UnityEvent onDialogueEnd;
+    protected UnityEvent onAllDialoguesFinishedEvent;
 
-    public void StartDialogue (Dialogue dialogue, UnityEvent dialogueFinishEvent)
+    public void StartDialogues(List<Dialogue> dialogues, UnityEvent allDialoguesFinishedEvent)
+    {
+        foreach (Dialogue dialogue in dialogues)
+        {
+            mDialogues.Enqueue(dialogue);
+        }
+        onAllDialoguesFinishedEvent = allDialoguesFinishedEvent;
+        TryStartNextDialogue();
+    }
+
+    protected void TryStartNextDialogue()
+    {
+        if (mDialogues.Count > 0)
+        {
+            Dialogue currDialogue = mDialogues.Dequeue();
+            StartDialogue(currDialogue);
+        }
+        else
+        {
+            EndAllDialogues();
+        }
+    }
+
+    protected void StartDialogue (Dialogue dialogue)
     {
         FindObjectOfType<PauseManager>().PauseAll();
         animator.SetBool("IsOpen", true);
@@ -28,8 +52,6 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-
-        onDialogueEnd = dialogueFinishEvent;
 
         DisplayNextSentence();
     }
@@ -60,7 +82,12 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        TryStartNextDialogue();
+    }
+
+    void EndAllDialogues()
+    {
         FindObjectOfType<PauseManager>().UnpauseAll();
-        onDialogueEnd.Invoke();
+        onAllDialoguesFinishedEvent.Invoke();
     }
 }

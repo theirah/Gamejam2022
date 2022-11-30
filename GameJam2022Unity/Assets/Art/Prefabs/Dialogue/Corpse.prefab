@@ -75,11 +75,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fdea0fcf4e401d4f9c3024c8fa69414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: TestPerson
+  dialogues:
+  - name: LevelEnd
     sentences:
-    - Test Sentence 1
-    - Test Sentence 2
+    - End of Level 1
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls:
