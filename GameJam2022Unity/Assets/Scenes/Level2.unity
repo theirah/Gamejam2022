@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 3d7f358e990d4c34098b35d629b8245b, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -1391,7 +1391,7 @@ Transform:
   - {fileID: 1438042547}
   - {fileID: 1020062254}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &473193182
 GameObject:
@@ -1962,7 +1962,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &679039107
 GameObject:
@@ -3460,7 +3460,7 @@ RectTransform:
   - {fileID: 896361084}
   - {fileID: 1247494352}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5786,7 +5786,7 @@ MonoBehaviour:
   invisibleWall: {fileID: 11400000, guid: cdcffe637bbcd584f89ecaa585c61bde, type: 2}
   platformTile: {fileID: 11400000, guid: dbc99129e1cb2ae4a89dbf9026337cc2, type: 2}
   stageSize: 200
-  leftSize: 20
+  edgeSize: 20
   invisibleWallHeight: 20
   gridDepth: 10
   generationStartPoint: 5
@@ -5797,6 +5797,11 @@ MonoBehaviour:
   platformsToSpawn: 15
   platformsSize: 3
   platformSpacing: 3
+  tree: {fileID: 8129754849349960020, guid: 61d7d5cd66d5aa84583bc94a4ec84a3d, type: 3}
+  endLevelObject: {fileID: 583113826602226141, guid: 3af393c3a22348546a35db0b6360bf2b, type: 3}
+  treeSpawnHeight: 4
+  treeSpawnDepth: 1.5
+  minTreeSpacing: 10
 --- !u!1 &2069575951
 GameObject:
   m_ObjectHideFlags: 0
@@ -6390,7 +6395,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 583113826602226128, guid: 3af393c3a22348546a35db0b6360bf2b, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 583113826602226128, guid: 3af393c3a22348546a35db0b6360bf2b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6447,7 +6452,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9152682551740126574, guid: e43131acb1fbb7a43b6948c29422a0f9, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9152682551740126574, guid: e43131acb1fbb7a43b6948c29422a0f9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6625,7 +6630,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8658036195571024585, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8658036195571024585, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
       propertyPath: m_LocalPosition.x
