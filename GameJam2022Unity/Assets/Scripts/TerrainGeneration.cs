@@ -48,10 +48,14 @@ public class TerrainGeneration : MonoBehaviour
 
     private void SpawnObjects()
     {
-        for (int i = 0; i < mObjectLocations.Count; i++)
+        if (tree!= null)
         {
-            Instantiate(tree, mObjectLocations[i], Quaternion.identity);
+            for (int i = 0; i < mObjectLocations.Count; i++)
+            {
+                Instantiate(tree, mObjectLocations[i], Quaternion.identity);
+            }
         }
+
     }
 
     private void SpawnTiles()
