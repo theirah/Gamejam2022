@@ -90,7 +90,7 @@ public class AudioManager : MonoBehaviour
     //Starts playing menu music
     private void Awake()
     {
-        DontDestroyOnLoad(transform.gameObject);
+        //DontDestroyOnLoad(transform.gameObject);
         if (menuMusic)
         {
             if (SceneManager.GetActiveScene().buildIndex == 1)
@@ -141,6 +141,11 @@ public class AudioManager : MonoBehaviour
     public void StageEnd()
     {
         advancingLevel = true;
+    }
+
+    public void UpdateLevel(int levelNumber)
+    {
+
     }
 
     //Triggers sound and music events when switching characters
@@ -322,7 +327,6 @@ public class AudioManager : MonoBehaviour
 
     private void AdvanceLevel()
     {
-        currentLevel++;
         if (currentLevel > maxLevel)
         {
             bossLevel = true;
@@ -377,6 +381,9 @@ public class AudioManager : MonoBehaviour
 
         if(advancingLevel)
         {
+            volumeIncrement = musicDefaultVolume / (fadeCounterMaxSlow * 1f);
+            volumeIncrementMax = musicDefaultVolume - volumeIncrement;
+
             if (fadeCounter >= fadeCounterMax)
             {
                 if (fadeMenuMusic)
