@@ -5799,7 +5799,11 @@ MonoBehaviour:
   platformSpacing: 3
   tree: {fileID: 0}
   endLevelObject: {fileID: 0}
+  berryBush: {fileID: 5540865844794307425, guid: 6a54b043c2b48e04ab60f64b2b3ed39e, type: 3}
+  berryBushHeight: 2
   treeSpawnHeight: 4
+  noBerryBushes: 3
+  bushPoses: 
   treeSpawnDepth: 1.5
   minTreeSpacing: 10
 --- !u!1 &2069575951

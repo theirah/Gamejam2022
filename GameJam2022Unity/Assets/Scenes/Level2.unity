@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5799,7 +5799,11 @@ MonoBehaviour:
   platformSpacing: 3
   tree: {fileID: 8129754849349960020, guid: 61d7d5cd66d5aa84583bc94a4ec84a3d, type: 3}
   endLevelObject: {fileID: 583113826602226141, guid: 3af393c3a22348546a35db0b6360bf2b, type: 3}
+  berryBush: {fileID: 5540865844794307425, guid: 6a54b043c2b48e04ab60f64b2b3ed39e, type: 3}
+  berryBushHeight: 2
   treeSpawnHeight: 4
+  noBerryBushes: 3
+  bushPoses: 
   treeSpawnDepth: 1.5
   minTreeSpacing: 10
 --- !u!1 &2069575951
