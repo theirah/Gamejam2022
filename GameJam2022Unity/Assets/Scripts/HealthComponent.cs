@@ -7,7 +7,7 @@ public class HealthComponent : MonoBehaviour
     [SerializeField]
     public float MaxHealth;
 
-    public float CurrHealth { get; protected set; }
+    public float CurrHealth { get; set; }   //Needs to be accessed by healing items, so can't be protected set
 
     public void Start()
     {
