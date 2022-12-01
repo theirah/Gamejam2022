@@ -9,7 +9,6 @@ public class LoadLevelComponent : MonoBehaviour
         if (levelName.Length > 0)
         {
             AudioManager audioManager = FindObjectOfType<AudioManager>();
-            audioManager.StageEnd();
             SceneManager.LoadScene(levelName);
 
         }
