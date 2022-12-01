@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthComponent : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class HealthComponent : MonoBehaviour
     public float MaxHealth;
 
     public float CurrHealth { get; set; }   //Needs to be accessed by healing items, so can't be protected set
+
+    public UnityEvent OnHealthReachesZero; 
 
     public void Start()
     {
@@ -22,7 +25,7 @@ public class HealthComponent : MonoBehaviour
             if (CurrHealth <= 0)
             {
                 CurrHealth = 0;
-                // Todo: Fire death event
+                OnHealthReachesZero.Invoke();
             }
         }
         return CurrHealth > 0;

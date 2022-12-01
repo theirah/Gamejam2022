@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8139939966300980745}
   - component: {fileID: 9037550016736045899}
+  - component: {fileID: 2012618241998967599}
   m_Layer: 0
   m_Name: Crow
   m_TagString: Untagged
@@ -86,6 +87,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2012618241998967599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4436725312965944661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4623f82faaf2c794d8ad400493e745e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6411670903779909404
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,6 +238,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+  OnHealthReachesZero:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2012618241998967599}
+        m_TargetAssemblyTypeName: EnemyDestroySelfComponent, Assembly-CSharp
+        m_MethodName: DestroySelf
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6959719880148050694
 MonoBehaviour:
   m_ObjectHideFlags: 0
