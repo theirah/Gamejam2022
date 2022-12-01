@@ -5,6 +5,7 @@ using UnityEngine;
 public class Boar : MonoBehaviour
 {
     [SerializeField] public float attackDistance = 3.0f;
+    [SerializeField] public float seePlayerDistance = 30.0f;
     [SerializeField] public GameObject chargeAttack;
     [SerializeField] public float noticePlayerJumpForce = 100.0f;
     [SerializeField] public float m_MovementSmoothing = 0.05f;
@@ -77,7 +78,7 @@ public class Boar : MonoBehaviour
                     ChargeAttack();
                 }
             }
-            else
+            else if (Vector3.Magnitude(hit.transform.position - transform.position) < seePlayerDistance)
             {
                 if (m_Grounded)
                 {
