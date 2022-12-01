@@ -10,7 +10,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<AudioManager>().StageEnd();
+      //  FindObjectOfType<AudioManager>().StageEnd();
         FindObjectOfType<DialogueManager>().StartDialogues(rootDialogueNode, onDialogueEnd);
     }
 }

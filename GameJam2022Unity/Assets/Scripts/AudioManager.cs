@@ -181,11 +181,6 @@ public class AudioManager : MonoBehaviour
         advancingLevel = true;
     }
 
-    public void UpdateLevel(int levelNumber)
-    {
-
-    }
-
     //Triggers sound and music events when switching characters
     public void SwitchToRed()
     {
@@ -461,7 +456,7 @@ public class AudioManager : MonoBehaviour
                     stage3WolfMusic.Stop();
                 }
                 advancingLevel = false;
-                AdvanceLevel();
+             //   AdvanceLevel();
 
             }
 
