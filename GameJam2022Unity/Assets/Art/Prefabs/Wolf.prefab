@@ -190,7 +190,7 @@ FixedJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: -0.35000002}
+  m_ConnectedAnchor: {x: 0, y: -0.3}
   m_DampingRatio: 0
   m_Frequency: 0
 --- !u!114 &1673302510838799220
@@ -279,6 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8117975385597987305}
   playerInput: {fileID: 781949386187390648}
+  characterController: {fileID: 3420781920681529578}
 --- !u!114 &781949386187390648
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -341,6 +341,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: -7894173396008061536}
   playerInput: {fileID: 4635311813653964019}
+  characterController: {fileID: 5364866167705670001}
 --- !u!114 &4635311813653964019
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class PlayerInputComponent : MonoBehaviour
 
     float EPSILON = .1f;
     public Action<bool, float> isMovingHorizontally;
+    public Action hasJumped;
 
     void Awake()
     {
@@ -38,6 +39,7 @@ public class PlayerInputComponent : MonoBehaviour
     void FixedUpdate()
     {
         isMovingHorizontally.Invoke(Math.Abs(mHorizontalMovement) > EPSILON, mHorizontalMovement);
+        if (mJump) hasJumped.Invoke();
         mControllerComponent.Move(mHorizontalMovement * Time.fixedDeltaTime, false, mJump);
         mJump = false;
     }
