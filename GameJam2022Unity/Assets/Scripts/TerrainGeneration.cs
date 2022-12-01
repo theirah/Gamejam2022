@@ -12,7 +12,10 @@ public class TerrainGeneration : MonoBehaviour
     public Tile groundSlopeUpTile;
     public Tile groundSlopeDownTile;
     public Tile invisibleWall;
-    public Tile platformTile;
+    public Tile platformTileLeft;
+    public Tile platformTileRight;
+    public Tile platformTileRight2;
+    public Tile platformTileMiddle;
     public int stageSize = 200;
     public int edgeSize = 20;
     public int invisibleWallHeight = 20;
@@ -296,10 +299,15 @@ public class TerrainGeneration : MonoBehaviour
 
     void SpawnPlatform(int x, int y)
     {
-        for (int i = 0; i < platformsSize; i++)
+        map.SetTile(new Vector3Int(x, y), platformTileLeft);
+        for (int i = 1; i < platformsSize -1; i++)
         {
-            map.SetTile(new Vector3Int(x + i, y), platformTile);
+            map.SetTile(new Vector3Int(x + i, y), platformTileMiddle);
         }
+        if (Random.Range(0,2) == 0)
+            map.SetTile(new Vector3Int(x + platformsSize - 1, y), platformTileRight);
+        else
+            map.SetTile(new Vector3Int(x + platformsSize - 1, y), platformTileRight2);
         for (int i = 0; i < mObjectLocations.Count; i++)
         {
             //If there's another tree in the area, don't spawn a tree
