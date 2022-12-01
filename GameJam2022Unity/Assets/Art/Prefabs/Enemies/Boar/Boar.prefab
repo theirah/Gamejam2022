@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDistance: 3
+  seePlayerDistance: 30
   chargeAttack: {fileID: 786137573562147152, guid: 543bfe573f82a4c428fc6f85803bf67b, type: 3}
   noticePlayerJumpForce: 200
   m_MovementSmoothing: 0.05
@@ -323,7 +324,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6, y: 0.4}
+  m_Size: {x: 0.6, y: 0.3}
   m_Direction: 1
 --- !u!255 &5402253230745581823
 FixedJoint2D:

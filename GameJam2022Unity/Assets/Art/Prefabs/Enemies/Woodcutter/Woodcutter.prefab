@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: d1520768c6a35a54ba09cb5b7fdb60d2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ada4e6f6bbf260141923751d4de17572, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   rightSide: {fileID: 776496519179290293}
   leftArena: {fileID: 6228420414145479194}
   rightArena: {fileID: 589475496195090133}
-  phase1Trap: {fileID: 739789074709708636, guid: 5867e4db06c18484e9ee148168c43f53, type: 3}
+  phase1Trap: {fileID: 739789074709708636, guid: 7060f8428cff78747a41fdd82fd6470c, type: 3}
   phase2Trap: {fileID: 0}
   axe: {fileID: 4203410219162730774, guid: 9bc18b5c41dc94a41928d65debdefba3, type: 3}
   fire: {fileID: 8555447609046666716, guid: 250cc0c12a57af049b070ccc03f6d219, type: 3}
@@ -165,6 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitSound: 8
   MaxHealth: 500
+  CurrHealth: 0
   OnHealthReachesZero:
     m_PersistentCalls:
       m_Calls:
