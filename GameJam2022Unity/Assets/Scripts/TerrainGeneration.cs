@@ -69,11 +69,14 @@ public class TerrainGeneration : MonoBehaviour
                 valid = true;
                 for (int j = yPos; j < yPos + enemySpace; j++)
                 {
-                    if (Physics2D.OverlapCircle(new Vector3(pos, j), 1.0f) != null ||
-                        map.HasTile(new Vector3Int(pos, j)))
+                    for (int k = -1; k < 2; k++)
                     {
-                        valid = false;
-                        break;
+                        if (Physics2D.OverlapCircle(new Vector3(pos + k, j), 1.0f) != null ||
+                            map.HasTile(new Vector3Int(pos + k, j)))
+                        {
+                            valid = false;
+                            break;
+                        }
                     }
                 }
                 yPos++;
