@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9943d9c81c3d6a2468f6648d0ff51575, type: 3}
   m_Name: Lvl3OpeningCorruptionBranch
   m_EditorClassIdentifier: 
-  possibleDialogues: []
+  possibleDialogues:
+  - {fileID: 11400000, guid: e73de80e33fea9b43a21efa80e6d3325, type: 2}
+  - {fileID: 11400000, guid: e73de80e33fea9b43a21efa80e6d3325, type: 2}
+  - {fileID: 11400000, guid: 26382ccfe9e663946b26d5fa2e40850c, type: 2}

@@ -13,4 +13,37 @@ MonoBehaviour:
   m_Name: Lvl3OpeningNormalSemicorrupt
   m_EditorClassIdentifier: 
   dialogue:
-    sentences: []
+    sentences:
+    - speaker: Wolf
+      sentence: "There\u2019s no doubt in my mind\u2026 We\u2019re almost out of
+        the forest!"
+    - speaker: Red
+      sentence: "That\u2019s great! Soon, I\u2019ll be able to see my grandmother
+        again."
+    - speaker: Red
+      sentence: Say, Wolf?
+    - speaker: Wolf
+      sentence: What is it?
+    - speaker: Red
+      sentence: I want to thank you again for helping me. I am grateful.
+    - speaker: Wolf
+      sentence: "Grateful\u2026 I don\u2019t think anyone\u2019s said that word to
+        me before."
+    - speaker: Wolf
+      sentence: "It feels strange. Though at the same time, I can\u2019t help but
+        feel a bit of warmth."
+    - speaker: Red
+      sentence: "Well, I think you\u2019re a friendly wolf to be with if you\u2019re
+        willing to help me through this forest."
+    - speaker: Red
+      sentence: "I\u2019m sure my grandmother would be just as grateful as I am."
+    - speaker: Wolf
+      sentence: You believe so?
+    - speaker: Red
+      sentence: I know so.
+    - speaker: Wolf
+      sentence: "Heh\u2026 I\u2019ll take your word for it."
+    - speaker: Wolf
+      sentence: "In any case, let\u2019s end this once and for all."
+    - speaker: Red
+      sentence: "Let\u2019s."

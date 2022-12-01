@@ -13,4 +13,23 @@ MonoBehaviour:
   m_Name: Lvl3AgainstWoodsmanRedCorrupt
   m_EditorClassIdentifier: 
   dialogue:
-    sentences: []
+    sentences:
+    - speaker: Red
+      sentence: "So\u2026 You must be the Woodsman."
+    - speaker: Woodsman
+      sentence: "That, I am. You have some nerve to enter this forest, especially
+        when I\u2019m feeling a bit swing-happy with my axe lately."
+    - speaker: Red
+      sentence: "I don\u2019t have time for this. Away, or your blood will spill
+        all over the floor."
+    - speaker: Woodsman
+      sentence: HAHAHAHA!
+    - speaker: Woodsman
+      sentence: You have quite the sense of humor for a wee thing about to get gutted!
+    - speaker: Woodsman
+      sentence: "Though I can\u2019t help but see you\u2019ve grown quite crooked.
+        This should make things much more fun!"
+    - speaker: Red
+      sentence: "I won\u2019t repeat myself. Move. Or. Die."
+    - speaker: Woodsman
+      sentence: "Go ahead, then. Kill me\u2026 if you can!"

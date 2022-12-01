@@ -13,4 +13,24 @@ MonoBehaviour:
   m_Name: Lvl3AgainstWoodsmanRedNormal
   m_EditorClassIdentifier: 
   dialogue:
-    sentences: []
+    sentences:
+    - speaker: Red
+      sentence: "The Woodsman\u2026!"
+    - speaker: Woodsman
+      sentence: What brings you to these woods, lass?
+    - speaker: Woodsman
+      sentence: Everyone knows that whoever walks through these woods meets a grisly
+        end.
+    - speaker: Red
+      sentence: "I\u2019m on my way to my grandmother\u2019s house. This nice wolf
+        was willing to help me go through it."
+    - speaker: Red
+      sentence: "I don\u2019t wish to cause any trouble, sir. Please, will you allow
+        us to go?"
+    - speaker: Woodsman
+      sentence: Grandmother, hm?
+    - speaker: Woodsman
+      sentence: "Perhaps I\u2019ll warn her to never come into my forest by bringing
+        her granddaughter\u2019s corpse to her front porch!"
+    - speaker: Red
+      sentence: <Gasp!>

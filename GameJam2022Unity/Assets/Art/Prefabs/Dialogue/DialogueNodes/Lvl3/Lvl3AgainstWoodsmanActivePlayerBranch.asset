@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbc10921b1c6e54989ee4903dc4af9f, type: 3}
   m_Name: Lvl3AgainstWoodsmanActivePlayerBranch
   m_EditorClassIdentifier: 
-  dialogueNodesbySwapCharacterIndex: []
+  dialogueNodesBySwapCharacterIndex:
+  - {fileID: 11400000, guid: 41a3a7d1dcbc9884094397f99a7b48ca, type: 2}
+  - {fileID: 11400000, guid: 26cc6f0fabac36547bbef883c3161644, type: 2}

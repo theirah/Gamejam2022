@@ -13,4 +13,21 @@ MonoBehaviour:
   m_Name: Lvl3AgainstWoodsmanRedSemicorrupt
   m_EditorClassIdentifier: 
   dialogue:
-    sentences: []
+    sentences:
+    - speaker: Woodsman
+      sentence: What have we here?
+    - speaker: Red
+      sentence: My name is Red, and I demand you let us through!
+    - speaker: Woodsman
+      sentence: HAHAHAHA! Why should I do that, hm?
+    - speaker: Woodsman
+      sentence: Everyone knows that any who enter my forest will meet their end!
+    - speaker: Red
+      sentence: "I\u2019m not scared of you\u2026 Not when Wolf is by my side!"
+    - speaker: Woodsman
+      sentence: Wolf, hm? So that wily animal decided to have a little girl help
+        him fight?
+    - speaker: Woodsman
+      sentence: "Pathetic\u2026 You two will be dealt with shortly."
+    - speaker: Red
+      sentence: "Don\u2019t underestimate us!"

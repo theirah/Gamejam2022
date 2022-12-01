@@ -13,4 +13,15 @@ MonoBehaviour:
   m_Name: Lvl3OpeningCorrupt
   m_EditorClassIdentifier: 
   dialogue:
-    sentences: []
+    sentences:
+    - speaker: Red
+      sentence: "This is it\u2026 The final stretch."
+    - speaker: Red
+      sentence: I can see the end of this miserable place.
+    - speaker: Red
+      sentence: "And if anyone dares to get in our way, we\u2019ll strike them down.
+        Even that damned Woodsman!"
+    - speaker: Wolf
+      sentence: <Threatening howl>
+    - speaker: Red
+      sentence: "Let\u2019s finish this, Wolf."

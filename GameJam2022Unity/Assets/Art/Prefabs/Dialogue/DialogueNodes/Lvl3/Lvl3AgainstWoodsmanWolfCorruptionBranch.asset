@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9943d9c81c3d6a2468f6648d0ff51575, type: 3}
   m_Name: Lvl3AgainstWoodsmanWolfCorruptionBranch
   m_EditorClassIdentifier: 
-  possibleDialogues: []
+  possibleDialogues:
+  - {fileID: 11400000, guid: c13d37bb25f0cec478631329fa413c04, type: 2}
+  - {fileID: 11400000, guid: 8ffbeb72209c5b7499682342462ef9af, type: 2}
+  - {fileID: 11400000, guid: 0cc73c9617157a04b92057d3e036ba19, type: 2}

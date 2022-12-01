@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Lvl3AgainstWoodsmanRedCorruptionBranch
   m_EditorClassIdentifier: 
   possibleDialogues:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: e6d3103fa5fe3df4289a6472db58bdde, type: 2}
+  - {fileID: 11400000, guid: 18d1fbdfd8c8fb94db93bf4e5f4694ee, type: 2}
+  - {fileID: 11400000, guid: 7ca4a6651c2f3ff418e7bf38d722e223, type: 2}
