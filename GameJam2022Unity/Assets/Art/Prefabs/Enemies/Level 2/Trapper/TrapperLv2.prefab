@@ -223,7 +223,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -317,6 +317,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8139939966300980745}
     m_Modifications:
+    - target: {fileID: 1550100564692168709, guid: e9b6538afdd23374fa1d671ee5a3b5cf, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1550100564692168711, guid: e9b6538afdd23374fa1d671ee5a3b5cf, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

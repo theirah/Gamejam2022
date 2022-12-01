@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveToPos : MonoBehaviour
 {
     public Vector3 pos;
+    private bool hasMoved = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,10 @@ public class MoveToPos : MonoBehaviour
 
     public void Move()
     {
-        transform.position = pos;
+        if (!hasMoved)
+        {
+            hasMoved = true;
+            transform.position = pos;
+        }
     }
 }
