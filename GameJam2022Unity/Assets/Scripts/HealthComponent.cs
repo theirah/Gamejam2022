@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 public class HealthComponent : MonoBehaviour
 {
+    AudioManager audioManager;
+    public AudioManager.soundEffect hitSound = AudioManager.soundEffect.HIT; 
+
     [SerializeField]
     public float MaxHealth;
 
@@ -14,6 +17,7 @@ public class HealthComponent : MonoBehaviour
 
     public void Start()
     {
+        audioManager = FindObjectOfType<AudioManager>();
         CurrHealth = MaxHealth;
     }
 
@@ -21,6 +25,8 @@ public class HealthComponent : MonoBehaviour
     public bool TakeDamage (float damage) {
         if (CurrHealth > 0)
         {
+            audioManager.PlaySoundEffect(hitSound);
+
             CurrHealth -= damage;
             if (CurrHealth <= 0)
             {

@@ -56,7 +56,7 @@ public class WeaponHandlerComponent : MonoBehaviour, IPauseable
 
     GameObject FireWeapon(float charge)
     {
-        audioManager.PlaySoundEffect(AudioManager.soundEffect.SWING);
+        audioManager.PlaySoundEffect(mEquippedWeapon.weaponSoundEffect);
 
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = -Camera.main.transform.position.z; // distance between camera and grid, whose position is at 0

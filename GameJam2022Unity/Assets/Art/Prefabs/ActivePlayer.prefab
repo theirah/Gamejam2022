@@ -357,7 +357,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9226cbf15bd9ce46a873510dd57c162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitSound: 12
   MaxHealth: 100
+  OnHealthReachesZero:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2070643103243937101
 PrefabInstance:
   m_ObjectHideFlags: 0
