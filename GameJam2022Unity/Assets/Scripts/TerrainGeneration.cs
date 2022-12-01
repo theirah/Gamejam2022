@@ -37,6 +37,11 @@ public class TerrainGeneration : MonoBehaviour
     public float treeSpawnDepth = 1.5f;
     public float minTreeSpacing = 10;       //The minimum distance after which another tree can spawn
 
+    //Variables for enemies
+    public GameObject[] enemies;
+    public int enemiesCount = 0;
+    public int enemySpace = 6;
+
     private Tilemap map;
     private int maxTriesBeforeFailure = 50;
     private List<Vector3> mObjectLocations = new();
@@ -48,7 +53,35 @@ public class TerrainGeneration : MonoBehaviour
         SpawnTiles();
         Instantiate(endLevelObject, new Vector3(stageSize + edgeSize/2, 2), Quaternion.identity);
         SpawnObjects();
+        SpawnEnemies();
     }
+
+    private void SpawnEnemies()
+    {
+        for (int i = 0; i < enemiesCount; i++)
+        {
+            int pos = Random.Range(edgeSize, stageSize);
+            bool valid = false;
+            int yPos = -5;
+
+            while (valid == false)
+            {
+                valid = true;
+                for (int j = yPos; j < yPos + enemySpace; j++)
+                {
+                    if (Physics2D.OverlapCircle(new Vector3(pos, j), 1.0f) != null ||
+                        map.HasTile(new Vector3Int(pos, j)))
+                    {
+                        valid = false;
+                        break;
+                    }
+                }
+                yPos++;
+            }
+            int randEnemy = Random.Range(0, enemies.Length);
+            Instantiate(enemies[randEnemy], new Vector3(pos, yPos + enemySpace/2), Quaternion.identity);
+        }
+    }    
 
     private void SpawnObjects()
     {

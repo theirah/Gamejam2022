@@ -1375,7 +1375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &453406565
 Transform:
   m_ObjectHideFlags: 0
@@ -5863,6 +5863,12 @@ MonoBehaviour:
   bushPoses: 
   treeSpawnDepth: 1.5
   minTreeSpacing: 10
+  enemies:
+  - {fileID: 4436725312965944661, guid: ef289a949a7405044ac8d9a75da41132, type: 3}
+  - {fileID: 4436725312965944661, guid: 82eb81dec5fea5a479114e8b03ba450a, type: 3}
+  - {fileID: 4436725312965944661, guid: b78fe63e3113bdb4bade337a545f8ad0, type: 3}
+  enemiesCount: 15
+  enemySpace: 6
 --- !u!1 &2069575951
 GameObject:
   m_ObjectHideFlags: 0
