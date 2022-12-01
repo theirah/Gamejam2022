@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 8658036195571024586}
   - component: {fileID: 8658036195571024587}
   - component: {fileID: 4937995849824373821}
+  - component: {fileID: 6148475028616643245}
   - component: {fileID: -3348216828551960680}
   m_Layer: 0
   m_Name: ActivePlayer
@@ -378,6 +379,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6148475028616643245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8658036195571024584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef706ad11faa2543a73dd6fac31abde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pos: {x: 0, y: 2.5, z: 0}
 --- !u!114 &-3348216828551960680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,7 +461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7280871796892583624, guid: 9899e8774919b164294665046bcccc5c, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: -0.35000002
+      value: -0.3499999
       objectReference: {fileID: 0}
     - target: {fileID: 7280871796892583624, guid: 9899e8774919b164294665046bcccc5c, type: 3}
       propertyPath: m_ConnectedRigidBody

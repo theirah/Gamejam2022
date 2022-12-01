@@ -45,10 +45,6 @@ public class TerrainGeneration : MonoBehaviour
     public int enemiesCount = 0;
     public int enemySpace = 6;
 
-    //Player, so the can spawn in the right place
-    public GameObject player;
-    public Vector3 playerStartPos;
-
     private Tilemap map;
     private int maxTriesBeforeFailure = 50;
     private List<Vector3> mObjectLocations = new();
@@ -61,8 +57,6 @@ public class TerrainGeneration : MonoBehaviour
         Instantiate(endLevelObject, new Vector3(stageSize + edgeSize/2, 2), Quaternion.identity);
         SpawnObjects();
         SpawnEnemies();
-
-        player.transform.position = playerStartPos;
     }
 
     private void SpawnEnemies()

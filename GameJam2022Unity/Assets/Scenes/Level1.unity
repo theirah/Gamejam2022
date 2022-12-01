@@ -1546,6 +1546,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2161505186854604934, guid: 4903df0ced02492459e324ada9ef54b6, type: 3}
+      propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161505186854604934, guid: 4903df0ced02492459e324ada9ef54b6, type: 3}
+      propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161505186854604934, guid: 4903df0ced02492459e324ada9ef54b6, type: 3}
+      propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8658036195721561941}
+    - target: {fileID: 2161505186854604934, guid: 4903df0ced02492459e324ada9ef54b6, type: 3}
+      propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161505186854604934, guid: 4903df0ced02492459e324ada9ef54b6, type: 3}
+      propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Move
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161505186854604934, guid: 4903df0ced02492459e324ada9ef54b6, type: 3}
+      propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MoveToPos, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161505186854604934, guid: 4903df0ced02492459e324ada9ef54b6, type: 3}
+      propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161505186854604934, guid: 4903df0ced02492459e324ada9ef54b6, type: 3}
+      propertyPath: onDialogueEnd.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4903df0ced02492459e324ada9ef54b6, type: 3}
 --- !u!1 &1739965672
@@ -2162,8 +2194,6 @@ MonoBehaviour:
   - {fileID: 4436725312965944661, guid: d392d4bd7cfbf964ea10b5fbaeee6379, type: 3}
   enemiesCount: 10
   enemySpace: 6
-  player: {fileID: 185140636}
-  playerStartPos: {x: 0, y: 2.5, z: 0}
 --- !u!1 &2073514896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2502,7 +2532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8658036195571024585, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 25.97
       objectReference: {fileID: 0}
     - target: {fileID: 8658036195571024585, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2542,3 +2572,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
+--- !u!114 &8658036195721561941 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6148475028616643245, guid: ec353b3e60a0eae408fbf96631622c7e, type: 3}
+  m_PrefabInstance: {fileID: 8658036195721561940}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185140636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef706ad11faa2543a73dd6fac31abde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
