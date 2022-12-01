@@ -358,7 +358,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSound: 12
-  MaxHealth: 100
+  MaxHealth: 200
+  CurrHealth: 0
   OnHealthReachesZero:
     m_PersistentCalls:
       m_Calls: []
