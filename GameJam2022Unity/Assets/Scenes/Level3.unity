@@ -5798,7 +5798,7 @@ MonoBehaviour:
   platformsSize: 3
   platformSpacing: 3
   tree: {fileID: 0}
-  endLevelObject: {fileID: 0}
+  endLevelObject: {fileID: 8782196085843251258, guid: 688482b72854dc74f847bd97fe35a797, type: 3}
   berryBush: {fileID: 5540865844794307425, guid: 6a54b043c2b48e04ab60f64b2b3ed39e, type: 3}
   berryBushHeight: 2
   treeSpawnHeight: 4
@@ -5806,6 +5806,9 @@ MonoBehaviour:
   bushPoses: 
   treeSpawnDepth: 1.5
   minTreeSpacing: 10
+  enemies: []
+  enemiesCount: 0
+  enemySpace: 6
 --- !u!1 &2069575951
 GameObject:
   m_ObjectHideFlags: 0
