@@ -60,6 +60,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource wolfJump2SE;
     [SerializeField] AudioSource wolfScratch1SE;
     [SerializeField] AudioSource wolfScratch2SE;
+    [SerializeField] AudioSource knifeThrowSE;
 
     //Needed for playing appropriate music
     private int currentLevel = 1;
@@ -79,7 +80,7 @@ public class AudioManager : MonoBehaviour
     public enum soundEffect
     {
         TRAP, BOWPULL, BOWRELEASE, CHARSWITCH, CHOP, DEATHSQUISH, PLAYERDEATH,
-        FOOTSTEP, HIT, MENUMOVE, MENUSTART, YELL, HURT, JUMP, SWING, SCRATCH
+        FOOTSTEP, HIT, MENUMOVE, MENUSTART, YELL, HURT, JUMP, SWING, SCRATCH,KNIFETHROW
     };          //Chooses type of sound effect to play
 
     bool switchToRed = false;       //triggered once during character switch then reset
@@ -290,6 +291,11 @@ public class AudioManager : MonoBehaviour
             {
                     redJumpSE.Play();
             }
+            else if (soundEffectToPlay == soundEffect.KNIFETHROW && knifeThrowSE)
+            {
+                knifeThrowSE.Play();
+            }
+
         }
         else
         {
