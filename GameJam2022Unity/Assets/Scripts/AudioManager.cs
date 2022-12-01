@@ -63,7 +63,7 @@ public class AudioManager : MonoBehaviour
 
     //Needed for playing appropriate music
     private int currentLevel = 1;
-    private int maxLevel = 2;       //Maximum non-boss stage
+    private int maxLevel = 3;       //Maximum non-boss stage
     private bool bossLevel = false;
 
     private bool fadeMenuMusic = false;
@@ -94,6 +94,8 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         isRed = true;
+        Debug.Log(SceneManager.GetActiveScene().name);
+
         //DontDestroyOnLoad(transform.gameObject);
             if (SceneManager.GetActiveScene().name == "Level1")
             {
@@ -142,7 +144,6 @@ public class AudioManager : MonoBehaviour
                 bossLevel = true;
                 currentLevel = 4;
                 MusicVolumeReset();
-
         }
     }
     //Controls music fading events when switching characters
@@ -288,7 +289,6 @@ public class AudioManager : MonoBehaviour
             else if (soundEffectToPlay == soundEffect.JUMP && redJumpSE)
             {
                     redJumpSE.Play();
-                    Debug.Log("jump");
             }
         }
         else
@@ -378,6 +378,11 @@ public class AudioManager : MonoBehaviour
             {
                 stage2RedMusic.Play();
                 stage2WolfMusic.Play();
+            }
+            else if (currentLevel == 3)
+            {
+                stage3RedMusic.Play();
+                stage3WolfMusic.Play();
             }
             bossLevel = false;
         }
