@@ -288,7 +288,6 @@ public class AudioManager : MonoBehaviour
             else if (soundEffectToPlay == soundEffect.JUMP && redJumpSE)
             {
                     redJumpSE.Play();
-                    Debug.Log("jump");
             }
         }
         else

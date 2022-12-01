@@ -1668,7 +1668,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.8
+  m_Value: 0.3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1883,7 +1883,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.6
+  m_Value: 0.3
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2870,6 +2870,8 @@ MonoBehaviour:
   stage2RedMusic: {fileID: 1595886529}
   stage1WolfMusic: {fileID: 1959256153}
   stage2WolfMusic: {fileID: 1595886529}
+  stage3RedMusic: {fileID: 0}
+  stage3WolfMusic: {fileID: 0}
   stage3BossMusic: {fileID: 1595886529}
   trapSE: {fileID: 1595886529}
   bigSwing1SE: {fileID: 1595886529}
