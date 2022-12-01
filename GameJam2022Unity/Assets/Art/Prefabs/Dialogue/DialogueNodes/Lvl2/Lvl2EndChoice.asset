@@ -41,9 +41,9 @@ MonoBehaviour:
       sentence: Eat the corpse?
   choiceA:
     buttonText: Yes
-    nextNode: {fileID: 0}
+    nextNode: {fileID: 11400000, guid: 702932417fc25dd4995865acfb4e170a, type: 2}
     consequences: 1
   choiceB:
     buttonText: No
-    nextNode: {fileID: 0}
+    nextNode: {fileID: 11400000, guid: 29ba9482e581e5244a1728b9b2703498, type: 2}
     consequences: 0
