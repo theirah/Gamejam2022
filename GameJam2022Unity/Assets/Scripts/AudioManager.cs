@@ -95,7 +95,6 @@ public class AudioManager : MonoBehaviour
     private void Awake()
     {
         isRed = true;
-        Debug.Log(SceneManager.GetActiveScene().name);
 
         //DontDestroyOnLoad(transform.gameObject);
             if (SceneManager.GetActiveScene().name == "Level1")
@@ -109,15 +108,15 @@ public class AudioManager : MonoBehaviour
                 stage1WolfMusic.Play();
             }
             if (SceneManager.GetActiveScene().name == "Level2")
-            {
-                if (stage1WolfMusic.isPlaying)
-                    stage1RedMusic.Stop();
+        {
+            if (stage1WolfMusic.isPlaying)
                 stage1WolfMusic.Stop();
                 if (stage1RedMusic.isPlaying)
                     stage2RedMusic.Play();
                 stage2WolfMusic.Play();
+                stage2RedMusic.Play();
 
-                currentLevel = 2;
+            currentLevel = 2;
                 MusicVolumeReset();
             }
             if (SceneManager.GetActiveScene().name == "Level3")
@@ -377,6 +376,7 @@ public class AudioManager : MonoBehaviour
             }
             else if (currentLevel == 2)
             {
+                Debug.Log("play level 2 music for advancing level");
                 stage2RedMusic.Play();
                 stage2WolfMusic.Play();
             }
