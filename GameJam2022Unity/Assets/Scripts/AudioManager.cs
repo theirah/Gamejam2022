@@ -95,53 +95,53 @@ public class AudioManager : MonoBehaviour
     {
         isRed = true;
         //DontDestroyOnLoad(transform.gameObject);
-        if (menuMusic)
-        {
             if (SceneManager.GetActiveScene().name == "Level1")
             {
-                menuMusic.Stop();
+                if(menuMusic.isPlaying)
+                    menuMusic.Stop();
 
                 currentLevel = 1;
                 MusicVolumeReset();
-                StartStage1();
                 stage1RedMusic.Play();
                 stage1WolfMusic.Play();
             }
             if (SceneManager.GetActiveScene().name == "Level2")
             {
-                stage1RedMusic.Stop();
+                if (stage1WolfMusic.isPlaying)
+                    stage1RedMusic.Stop();
                 stage1WolfMusic.Stop();
-                stage2RedMusic.Play();
+                if (stage1RedMusic.isPlaying)
+                    stage2RedMusic.Play();
                 stage2WolfMusic.Play();
 
                 currentLevel = 2;
                 MusicVolumeReset();
-                StartStage1();
             }
             if (SceneManager.GetActiveScene().name == "Level3")
             {
-                stage2RedMusic.Stop();
-                stage2WolfMusic.Stop();
+                if (stage2RedMusic.isPlaying)
+                    stage2RedMusic.Stop();
+                if (stage2WolfMusic.isPlaying)
+                    stage2WolfMusic.Stop();
 
                 stage3RedMusic.Play();
                 stage3WolfMusic.Play();
 
                 currentLevel = 3;
                 MusicVolumeReset();
-                StartStage1();
             }
             if (SceneManager.GetActiveScene().name == "BossFight")
             {
-                stage3RedMusic.Stop();
-                stage3WolfMusic.Stop();
+                if (stage3RedMusic.isPlaying)
+                    stage3RedMusic.Stop();
+                if (stage3WolfMusic.isPlaying)
+                    stage3WolfMusic.Stop();
 
                 stage3BossMusic.Play();
 
                 bossLevel = true;
                 currentLevel = 4;
                 MusicVolumeReset();
-                StartStage1();
-            }
 
         }
     }
@@ -172,15 +172,6 @@ public class AudioManager : MonoBehaviour
         fadeMenuMusic = true;
         advancingLevel = true;
         PlaySoundEffect(soundEffect.MENUSTART);
-    }
-    private void StartStage1()
-    {
-        if (menuMusic)
-            menuMusic.Stop();
-        if (stage1RedMusic)
-            stage1RedMusic.Play();
-        if (stage1WolfMusic)
-            stage1WolfMusic.Play();
     }
     //Fade music between levels
     public void StageEnd()
@@ -402,15 +393,19 @@ public class AudioManager : MonoBehaviour
         {
             stage1RedMusic.volume = musicDefaultVolume;
             stage2RedMusic.volume = musicDefaultVolume;
+            stage3RedMusic.volume = musicDefaultVolume;
             stage1WolfMusic.volume = 0f;
             stage2WolfMusic.volume = 0f;
+            stage3WolfMusic.volume = 0f;
         }
         else
         {
             stage1RedMusic.volume = 0f;
             stage2RedMusic.volume = 0f;
+            stage3RedMusic.volume = 0f;
             stage1WolfMusic.volume = musicDefaultVolume;
             stage2WolfMusic.volume = musicDefaultVolume;
+            stage3WolfMusic.volume = musicDefaultVolume;
         }
 
         //Resets volume of music back to default
