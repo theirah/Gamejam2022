@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Woodcutter : MonoBehaviour
 {
+    AudioManager audioManager;
+
     //Locations
     [SerializeField] public Transform platform1;
     [SerializeField] public Transform platform2;
@@ -29,6 +31,7 @@ public class Woodcutter : MonoBehaviour
     //Movement
     private bool mIsMoving = false;
     const int mMovementTime = 40;
+    const int mRestTime = 30;
     private Vector3 mStartPosition;
     private Transform mTargetPosition = null;
 
@@ -42,7 +45,7 @@ public class Woodcutter : MonoBehaviour
     const int prepareJumpForce = 1000;
 
     //Axe throw variables
-    const int throwTime = 100;
+    const int throwTime = 150;
     private GameObject mAxe = null;
     private Vector3 mAxeStartPosition;
     private Transform mAxeTargetPosition = null;
@@ -81,7 +84,8 @@ public class Woodcutter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mCurrentState = states.none;
+        audioManager = FindObjectOfType<AudioManager>();
+           mCurrentState = states.none;
         mTargetPosition = rightSide;
     }
 
@@ -242,6 +246,8 @@ public class Woodcutter : MonoBehaviour
 
     void HandleAxeThrow()
     {
+        audioManager.PlaySoundEffect(AudioManager.soundEffect.SWING);
+
         if (mInAttack == false)
         {
             mInAttack = true;
@@ -359,6 +365,8 @@ public class Woodcutter : MonoBehaviour
 
     void HandleSwinging()
     {
+        audioManager.PlaySoundEffect(AudioManager.soundEffect.SWING);
+
         if (mInAttack == false)
         {
             mInAttack = true;
@@ -395,7 +403,7 @@ public class Woodcutter : MonoBehaviour
     {
         if (mIsMoving == false)
         {
-            mCurrentAttackTimer = mMovementTime;
+            mCurrentAttackTimer = mMovementTime + mRestTime;
             mIsMoving = true;
             //Disable collider for movement
             GetComponent<Rigidbody2D>().isKinematic = true;
@@ -406,17 +414,23 @@ public class Woodcutter : MonoBehaviour
 
         }
 
-        transform.position = mStartPosition+ 
-            (mTargetPosition.position - mStartPosition) * (((float)mMovementTime - (float)mCurrentAttackTimer)/(float)mMovementTime);
+        if (mCurrentAttackTimer > mRestTime)
+        {
+            transform.position = mStartPosition +
+                (mTargetPosition.position - mStartPosition) * (((float)(mMovementTime) - (float)(mCurrentAttackTimer - mRestTime)) / (float)(mMovementTime));
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().isKinematic = false;
+            GetComponent<Collider2D>().enabled = true;
+            GetComponentInChildren<BoxCollider2D>().enabled = true;
+        }
 
         mCurrentAttackTimer--;
 
         if (mCurrentAttackTimer < 0)
         {
             mIsMoving = false;
-            GetComponent<Rigidbody2D>().isKinematic = false;
-            GetComponent<Collider2D>().enabled = true;
-            GetComponentInChildren<BoxCollider2D>().enabled = true;
             mCurrentState = mNextState;
         }
     }

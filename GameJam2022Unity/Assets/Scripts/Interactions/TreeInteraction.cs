@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TreeInteraction : InteractableComponent
+public class TreeInteraction : MonoBehaviour
 {
 
-    public override void Interact(InteractorComponent interactor)
+    public void Interact(InteractorComponent interactor)
     {
         Debug.Log("I'm a tree!");
     }

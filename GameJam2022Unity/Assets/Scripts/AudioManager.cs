@@ -19,6 +19,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource stage2RedMusic;
     [SerializeField] AudioSource stage1WolfMusic;
     [SerializeField] AudioSource stage2WolfMusic;
+    [SerializeField] AudioSource stage3RedMusic;
+    [SerializeField] AudioSource stage3WolfMusic;
+
     [SerializeField] AudioSource stage3BossMusic;
 
     //"SE" is sound effect
@@ -57,10 +60,11 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource wolfJump2SE;
     [SerializeField] AudioSource wolfScratch1SE;
     [SerializeField] AudioSource wolfScratch2SE;
+    [SerializeField] AudioSource knifeThrowSE;
 
     //Needed for playing appropriate music
     private int currentLevel = 1;
-    private int maxLevel = 2;       //Maximum non-boss stage
+    private int maxLevel = 3;       //Maximum non-boss stage
     private bool bossLevel = false;
 
     private bool fadeMenuMusic = false;
@@ -69,13 +73,14 @@ public class AudioManager : MonoBehaviour
 
     private int fadeCounter = 0;        //keeps counting each frame until fade in/fade out is finished
     private int fadeCounterMax = 100;   //when to stop the fade
+    private int fadeCounterMaxSlow = 200; //for slower fadeouts
 
     private float musicDefaultVolume = 1f;  //Needs to be balanced to sound effect levels
 
     public enum soundEffect
     {
         TRAP, BOWPULL, BOWRELEASE, CHARSWITCH, CHOP, DEATHSQUISH, PLAYERDEATH,
-        FOOTSTEP, HIT, MENUMOVE, MENUSTART, YELL, HURT, JUMP, SWING, SCRATCH
+        FOOTSTEP, HIT, MENUMOVE, MENUSTART, YELL, HURT, JUMP, SWING, SCRATCH,KNIFETHROW
     };          //Chooses type of sound effect to play
 
     bool switchToRed = false;       //triggered once during character switch then reset
@@ -89,13 +94,57 @@ public class AudioManager : MonoBehaviour
     //Starts playing menu music
     private void Awake()
     {
-        if (menuMusic)
-        {
-            if (SceneManager.GetActiveScene().buildIndex == 1)
+        isRed = true;
+        Debug.Log(SceneManager.GetActiveScene().name);
+
+        //DontDestroyOnLoad(transform.gameObject);
+            if (SceneManager.GetActiveScene().name == "Level1")
             {
+                if(menuMusic.isPlaying)
+                    menuMusic.Stop();
+
+                currentLevel = 1;
                 MusicVolumeReset();
-                StartStage1();
+                stage1RedMusic.Play();
+                stage1WolfMusic.Play();
             }
+            if (SceneManager.GetActiveScene().name == "Level2")
+            {
+                if (stage1WolfMusic.isPlaying)
+                    stage1RedMusic.Stop();
+                stage1WolfMusic.Stop();
+                if (stage1RedMusic.isPlaying)
+                    stage2RedMusic.Play();
+                stage2WolfMusic.Play();
+
+                currentLevel = 2;
+                MusicVolumeReset();
+            }
+            if (SceneManager.GetActiveScene().name == "Level3")
+            {
+                if (stage2RedMusic.isPlaying)
+                    stage2RedMusic.Stop();
+                if (stage2WolfMusic.isPlaying)
+                    stage2WolfMusic.Stop();
+
+                stage3RedMusic.Play();
+                stage3WolfMusic.Play();
+
+                currentLevel = 3;
+                MusicVolumeReset();
+            }
+            if (SceneManager.GetActiveScene().name == "BossFight")
+            {
+                if (stage3RedMusic.isPlaying)
+                    stage3RedMusic.Stop();
+                if (stage3WolfMusic.isPlaying)
+                    stage3WolfMusic.Stop();
+
+                stage3BossMusic.Play();
+
+                bossLevel = true;
+                currentLevel = 4;
+                MusicVolumeReset();
         }
     }
     //Controls music fading events when switching characters
@@ -126,19 +175,15 @@ public class AudioManager : MonoBehaviour
         advancingLevel = true;
         PlaySoundEffect(soundEffect.MENUSTART);
     }
-    private void StartStage1()
-    {
-        if (menuMusic)
-            menuMusic.Stop();
-        if (stage1RedMusic)
-            stage1RedMusic.Play();
-        if (stage1WolfMusic)
-            stage1WolfMusic.Play();
-    }
     //Fade music between levels
     public void StageEnd()
     {
         advancingLevel = true;
+    }
+
+    public void UpdateLevel(int levelNumber)
+    {
+
     }
 
     //Triggers sound and music events when switching characters
@@ -226,7 +271,6 @@ public class AudioManager : MonoBehaviour
 
         if (isRed)
         {
-
             if (soundEffectToPlay == soundEffect.YELL && redHuwh1SE)
             {
                 if (!redHuwh1SE.isPlaying)
@@ -245,9 +289,13 @@ public class AudioManager : MonoBehaviour
             }
             else if (soundEffectToPlay == soundEffect.JUMP && redJumpSE)
             {
-                if (!redJumpSE.isPlaying)
                     redJumpSE.Play();
             }
+            else if (soundEffectToPlay == soundEffect.KNIFETHROW && knifeThrowSE)
+            {
+                knifeThrowSE.Play();
+            }
+
         }
         else
         {
@@ -320,7 +368,6 @@ public class AudioManager : MonoBehaviour
 
     private void AdvanceLevel()
     {
-        currentLevel++;
         if (currentLevel > maxLevel)
         {
             bossLevel = true;
@@ -338,6 +385,11 @@ public class AudioManager : MonoBehaviour
                 stage2RedMusic.Play();
                 stage2WolfMusic.Play();
             }
+            else if (currentLevel == 3)
+            {
+                stage3RedMusic.Play();
+                stage3WolfMusic.Play();
+            }
             bossLevel = false;
         }
         
@@ -352,15 +404,19 @@ public class AudioManager : MonoBehaviour
         {
             stage1RedMusic.volume = musicDefaultVolume;
             stage2RedMusic.volume = musicDefaultVolume;
+            stage3RedMusic.volume = musicDefaultVolume;
             stage1WolfMusic.volume = 0f;
             stage2WolfMusic.volume = 0f;
+            stage3WolfMusic.volume = 0f;
         }
         else
         {
             stage1RedMusic.volume = 0f;
             stage2RedMusic.volume = 0f;
+            stage3RedMusic.volume = 0f;
             stage1WolfMusic.volume = musicDefaultVolume;
             stage2WolfMusic.volume = musicDefaultVolume;
+            stage3WolfMusic.volume = musicDefaultVolume;
         }
 
         //Resets volume of music back to default
@@ -375,6 +431,9 @@ public class AudioManager : MonoBehaviour
 
         if(advancingLevel)
         {
+            volumeIncrement = musicDefaultVolume / (fadeCounterMaxSlow * 1f);
+            volumeIncrementMax = musicDefaultVolume - volumeIncrement;
+
             if (fadeCounter >= fadeCounterMax)
             {
                 if (fadeMenuMusic)
@@ -395,6 +454,11 @@ public class AudioManager : MonoBehaviour
                 {
                     stage2RedMusic.Stop();
                     stage2WolfMusic.Stop();
+                }
+                else if (currentLevel == 3)
+                {
+                    stage3RedMusic.Stop();
+                    stage3WolfMusic.Stop();
                 }
                 advancingLevel = false;
                 AdvanceLevel();
@@ -420,6 +484,8 @@ public class AudioManager : MonoBehaviour
                     stage1RedMusic.volume -= volumeIncrement;
                 else if (currentLevel == 2 && stage2RedMusic.volume >= volumeIncrement)
                     stage2RedMusic.volume -= volumeIncrement;
+                else if (currentLevel == 3 && stage2RedMusic.volume >= volumeIncrement)
+                    stage3RedMusic.volume -= volumeIncrement;
             }
             else if (!isRed)
             {
@@ -427,6 +493,8 @@ public class AudioManager : MonoBehaviour
                     stage1WolfMusic.volume -= volumeIncrement;
                 else if (currentLevel == 2 && stage2RedMusic.volume >= volumeIncrement)
                     stage2WolfMusic.volume -= volumeIncrement;
+                else if (currentLevel == 3 && stage2RedMusic.volume >= volumeIncrement)
+                    stage3WolfMusic.volume -= volumeIncrement;
             }
 
         }
@@ -449,6 +517,13 @@ public class AudioManager : MonoBehaviour
                     if (stage2WolfMusic.volume >= volumeIncrement)
                         stage2WolfMusic.volume -= volumeIncrement;
                 }
+                else if (currentLevel == 3 && stage2RedMusic && stage3WolfMusic)
+                {
+                    if (stage3RedMusic.volume <= volumeIncrementMax)
+                        stage3RedMusic.volume += volumeIncrement;
+                    if (stage3WolfMusic.volume >= volumeIncrement)
+                        stage3WolfMusic.volume -= volumeIncrement;
+                }
             }
         }
         else if (switchingToWolf && !bossLevel)
@@ -466,6 +541,13 @@ public class AudioManager : MonoBehaviour
                     stage2RedMusic.volume -= volumeIncrement;
                 if (stage2WolfMusic.volume <= volumeIncrementMax)
                     stage2WolfMusic.volume += volumeIncrement;
+            }
+            else if (currentLevel == 3 && stage2RedMusic && stage3WolfMusic)
+            {
+                if (stage3RedMusic.volume >= volumeIncrement)
+                    stage3RedMusic.volume -= volumeIncrement;
+                if (stage3WolfMusic.volume <= volumeIncrementMax)
+                    stage3WolfMusic.volume += volumeIncrement;
             }
         }
         else if(!switchingToWolf && ! switchingToRed)     //Fade out music at end of level

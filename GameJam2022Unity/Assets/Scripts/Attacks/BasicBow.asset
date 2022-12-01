@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitPrefab: {fileID: 4696197901704808509, guid: 7e0ee3b2bb1ff5349b134a685e3be012, type: 3}
   cooldown: 0.2
+  weaponSoundEffect: 16
   isChargeWeapon: 1
   maxChargeTime: 2
   spawnDistance: 1

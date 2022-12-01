@@ -28,6 +28,6 @@ public class MainMenu : MonoBehaviour
     private void LoadNextScene()
     {
         //This is the same line from the original "PlayGame()" method, it just gets delayed now.
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Level1");
     }
 }

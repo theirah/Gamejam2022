@@ -46,25 +46,16 @@ public class InteractorComponent : MonoBehaviour
         {
             Vector2 dist = interactable.transform.position - transform.position;
 
-            // if gameobject is facing the direction of the interactable
-            if ((dist.x >= 0 && IsFacingRight()) || (dist.x < 0 && !IsFacingRight()))
+            float xDistToInteractable = Mathf.Abs(dist.x);
+            if ( xDistToInteractable < closestDist)
             {
-                float xDistToInteractable = Mathf.Abs(dist.x);
-                if ( xDistToInteractable < closestDist)
-                {
-                    bestCandidate = interactable;
-                    closestDist = xDistToInteractable;
-                }
+                bestCandidate = interactable;
+                closestDist = xDistToInteractable;
             }
         }
         if (bestCandidate != null)
         {
             bestCandidate.Interact(this);
         }
-    }
-
-    private bool IsFacingRight()
-    {
-        return transform.localScale.x >= 0;
     }
 }

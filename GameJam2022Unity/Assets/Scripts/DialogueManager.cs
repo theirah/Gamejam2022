@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Events;
+
 public class DialogueManager : MonoBehaviour
 {
     public TMP_Text nameText;
@@ -10,9 +12,34 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
+    protected Queue<Dialogue> mDialogues = new Queue<Dialogue>();
     private Queue<string> sentences = new Queue<string>();
+    protected UnityEvent onAllDialoguesFinishedEvent;
 
-    public void StartDialogue (Dialogue dialogue)
+    public void StartDialogues(List<Dialogue> dialogues, UnityEvent allDialoguesFinishedEvent)
+    {
+        foreach (Dialogue dialogue in dialogues)
+        {
+            mDialogues.Enqueue(dialogue);
+        }
+        onAllDialoguesFinishedEvent = allDialoguesFinishedEvent;
+        TryStartNextDialogue();
+    }
+
+    protected void TryStartNextDialogue()
+    {
+        if (mDialogues.Count > 0)
+        {
+            Dialogue currDialogue = mDialogues.Dequeue();
+            StartDialogue(currDialogue);
+        }
+        else
+        {
+            EndAllDialogues();
+        }
+    }
+
+    protected void StartDialogue (Dialogue dialogue)
     {
         FindObjectOfType<PauseManager>().PauseAll();
         animator.SetBool("IsOpen", true);
@@ -55,6 +82,12 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        TryStartNextDialogue();
+    }
+
+    void EndAllDialogues()
+    {
         FindObjectOfType<PauseManager>().UnpauseAll();
+        onAllDialoguesFinishedEvent.Invoke();
     }
 }
