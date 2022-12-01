@@ -46,6 +46,6 @@ public class FadeToBlackComponent : MonoBehaviour
     {
         mFading = true;
         mFadeLengthSecs = fadeLengthSecs;
-
+        mCallback = callback;
     }
 }

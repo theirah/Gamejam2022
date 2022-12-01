@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: Prologue
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: 
+      sentence: "Hello there. My name is Red. You may know me from the classic tale
+        where a young girl in a red hood walks through a forest and fends off against
+        a wolf while on her way to her grandmother\u2019s house. "
+    - speaker: 
+      sentence: "It\u2019s a story told throughout the ages, and I\u2019m living
+        it right now. However, it\u2019s not quite the tale that you\u2019re expecting
+        it to be\u2026"
+    - speaker: 
+      sentence: "While I was on my way to my grandma\u2019s humble tiny home, the
+        same wolf that was supposed to be my enemy turned out to be anything but.
+        This one was friendlier, coming to me with a warning."
+    - speaker: 
+      sentence: " A Woodsman that looked\u2026 abnormal. Vicious. Corrupt. This Woodsman
+        shows no mercy to those he stumbles across, and this wolf happened to be
+        one of his targets before he escaped. "
+    - speaker: 
+      sentence: 'Just by looking at me, he knew that if I were to trek this forest
+        alone, I would not survive even a minute. '
+    - speaker: 
+      sentence: "Therefore, I suggested that we should work together to get through
+        the forest, so we can escape from the Woodsman and reach my grandmother\u2019s
+        home. "
+    - speaker: 
+      sentence: "Hesitantly, he agreed, and so we set off on our perilous journey
+        through the massive forest, our main goal being to survive\u2026"

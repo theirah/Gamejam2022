@@ -4,14 +4,21 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : DialogueTrigger
 {
     AudioManager audioManager;
+    UnityEvent onFinishFade = new UnityEvent();
+
+    private void Awake()
+    {
+        onFinishFade.AddListener(TriggerDialogue);
+    }
+
     public void PlayGame()
     {
         GameObject fadeScreen = GameObject.FindGameObjectWithTag("FadeScreen");
-        fadeScreen.GetComponent<FadeToBlackComponent>().BeginFadeToBlack(2, null);
-        StartCoroutine(FadeMusicThenStart());
+        fadeScreen.GetComponent<FadeToBlackComponent>().BeginFadeToBlack(2, onFinishFade);
+        FadeMusic();
     }
 
     public void QuitGame()
@@ -20,15 +27,13 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    IEnumerator FadeMusicThenStart()
+    void FadeMusic()
     {
         audioManager = FindObjectOfType<AudioManager>();
         audioManager.PlayGame();
-        yield return new WaitForSeconds(2f);
-        LoadNextScene();
     }
 
-    private void LoadNextScene()
+    public void LoadNextScene()
     {
         //This is the same line from the original "PlayGame()" method, it just gets delayed now.
         SceneManager.LoadScene("Level1");
