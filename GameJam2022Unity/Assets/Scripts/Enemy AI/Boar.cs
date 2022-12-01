@@ -95,6 +95,11 @@ public class Boar : MonoBehaviour
                     rbody.velocity = Vector3.SmoothDamp(rbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
                 }
             }
+            else
+            {
+                if (coyoteTime > 0)
+                    coyoteTime--;
+            }
         }
         else
         {
