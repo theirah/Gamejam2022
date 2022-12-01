@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: EndingCorrupt
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: 
+      sentence: 'No matter who faced us, they were nothing to us. One by one, our
+        enemies fell, allowing us passage through the forest. '
+    - speaker: 
+      sentence: "Not even the Woodsman was able to stop us as we went down our last
+        stretch of land before making it to my grandmother\u2019s house. "
+    - speaker: 
+      sentence: "What awaited us there wasn\u2019t the warm smile of my grandmother,
+        but instead a scared gaze as she saw Wolf and me framed in the threshold
+        of our current position. "
+    - speaker: 
+      sentence: "She didn\u2019t know what we went through, and she never will. The
+        sight of our battle-hardened visage proved too much for the old hag\u2019s
+        heart. If she couldn\u2019t handle the sight of the new me, then so be it."
+    - speaker: 
+      sentence: "She can die knowing that I wasn\u2019t the same defenseless little
+        girl that she knew before. I would call myself alone, but that wasn\u2019t
+        true. I had Wolf to be there with me now. "
+    - speaker: 
+      sentence: "While he couldn\u2019t speak anymore, he wished to embrace his new
+        look more openly. Not that I blame him. He wouldn\u2019t have been much help
+        to me, to begin with, had he not succumbed to this newfound power. "
+    - speaker: 
+      sentence: "As such, he searched through my grandmother\u2019s clothes and slipped
+        them on himself, thanks to his newfound hands.  "
+    - speaker: 
+      sentence: "Now, we live together in this little house. No one to bother us,
+        threaten us, hurt us\u2026 Because they knew better than to anger us."

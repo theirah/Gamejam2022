@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: EndingSemicorrupt
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: 
+      sentence: Wolf and I defeated the Woodsman. It was true that he was a strong
+        opponent, but working as one, we bested him with our strengths combined.
+    - speaker: 
+      sentence: "With him gone, the path to my grandmother\u2019s house was open
+        to us, allowing us to escape from the forest. "
+    - speaker: 
+      sentence: "As much as this experience has helped me to bond with Wolf ever
+        since we first met, I\u2019d like to forget any of this happened and put
+        everything we\u2019ve gone through behind us."
+    - speaker: 
+      sentence: Surely, my grandmother would be understanding of what had happened.
+    - speaker: 
+      sentence: 'Unfortunately for me, that would not be the case. As soon as we
+        arrived, she would see Wolf and be terrified by the sight of him. '
+    - speaker: 
+      sentence: "She had mistakenly believed that it was because of him that she\u2019d
+        find me ragged and bruised."
+    - speaker: 
+      sentence: 'He ran immediately upon seeing the hostility she had towards him,
+        and while I wanted to say something to defend him, my grandmother was more
+        focused on making sure I was okay. '
+    - speaker: 
+      sentence: "So while I was able to come home safe, I never got the chance to
+        say goodbye to Wolf and thank him properly for all he\u2019s done. Deep down,
+        I can\u2019t help but wonder what things would have been like had he stayed."
