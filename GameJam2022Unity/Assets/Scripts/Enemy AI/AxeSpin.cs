@@ -26,7 +26,7 @@ public class AxeSpin : MonoBehaviour
         {
             // Multiply the local scale by -1.
             Vector3 theScale = transform.localScale;
-            if (isY )
+            if (isY)
                 theScale.y *= -1;
             else 
                 theScale.x *= -1;

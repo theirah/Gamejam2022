@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 468539687427101569}
   - component: {fileID: 3336985209640081330}
   - component: {fileID: 8278916169471233592}
+  - component: {fileID: 6630249354890345986}
   - component: {fileID: 4358943739816784525}
   - component: {fileID: 881912549721313294}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PlaceholderWoodcutter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35,6 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2468202726681758265}
+  - {fileID: 6904435246507600507}
   m_Father: {fileID: 3514790886251746773}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -118,7 +120,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 10
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -146,11 +148,29 @@ MonoBehaviour:
   leftArena: {fileID: 6228420414145479194}
   rightArena: {fileID: 589475496195090133}
   phase1Trap: {fileID: 739789074709708636, guid: 7060f8428cff78747a41fdd82fd6470c, type: 3}
-  phase2Trap: {fileID: 0}
+  phase2Trap: {fileID: 739789074709708636, guid: 707f11b4e88081144ade6c176e9067b2, type: 3}
   axe: {fileID: 4203410219162730774, guid: 9bc18b5c41dc94a41928d65debdefba3, type: 3}
   fire: {fileID: 8555447609046666716, guid: 250cc0c12a57af049b070ccc03f6d219, type: 3}
   swing: {fileID: 5821186587907409046, guid: 786ede1bcace2c64d9769a0f10854b15, type: 3}
-  grenade: {fileID: 4111017689598640742, guid: 7b173c305f48ef8418d1d14dc8b0d126, type: 3}
+  Phase1Grenade: {fileID: 4111017689598640742, guid: 7b173c305f48ef8418d1d14dc8b0d126, type: 3}
+  Phase2Grenade: {fileID: 4111017689598640742, guid: 4da1cb763a82c774fb21202a2bb95abf, type: 3}
+  woodcutterNormal: {fileID: 21300000, guid: ada4e6f6bbf260141923751d4de17572, type: 3}
+  woodcutterThrow: {fileID: 21300000, guid: b7966e917d266c04c985423b8c169499, type: 3}
+  woodcutterCharge: {fileID: 21300000, guid: 653bcac2239b28d448d2fe42916326ef, type: 3}
+--- !u!114 &6630249354890345986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242261738268164421}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7b56fdaf958e14f9ca2722f77535a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spinSpeed: 2
+  isY: 1
 --- !u!114 &4358943739816784525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSound: 8
-  MaxHealth: 500
+  MaxHealth: 400
   CurrHealth: 0
   OnHealthReachesZero:
     m_PersistentCalls:
@@ -226,6 +246,79 @@ Transform:
   m_Father: {fileID: 8323723802860545023}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3163028410672948269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6904435246507600507}
+  - component: {fileID: 255867635622009426}
+  - component: {fileID: 2169489304607417549}
+  m_Layer: 0
+  m_Name: Charge contact hitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6904435246507600507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163028410672948269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4237949851020745636}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &255867635622009426
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163028410672948269}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5, y: 3}
+  m_EdgeRadius: 0
+--- !u!114 &2169489304607417549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3163028410672948269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 578177e7251ca4f4585224022e128954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageType: 1
+  damage: 30
 --- !u!1 &3876020781729947805
 GameObject:
   m_ObjectHideFlags: 0

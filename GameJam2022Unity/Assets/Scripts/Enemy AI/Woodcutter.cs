@@ -20,7 +20,12 @@ public class Woodcutter : MonoBehaviour
     [SerializeField] private GameObject axe;
     [SerializeField] private GameObject fire;
     [SerializeField] private GameObject swing;
-    [SerializeField] private GameObject grenade;
+    [SerializeField] private GameObject Phase1Grenade;
+    [SerializeField] private GameObject Phase2Grenade;
+
+    [SerializeField] private Sprite woodcutterNormal;
+    [SerializeField] private Sprite woodcutterThrow;
+    [SerializeField] private Sprite woodcutterCharge;
 
     private bool mFacingRight = true;
     private int mCurrentAttackTimer = 0;
@@ -41,8 +46,11 @@ public class Woodcutter : MonoBehaviour
 
     //Charge variables
     const int prepareTime = 60;
-    const int chargeTime = 50;
-    const int prepareJumpForce = 1000;
+    const int chargeTimePhase1 = 90;
+    const int chargeTimePhase2 = 70;
+    private int chargeTime;
+    const int prepareJumpForce = 100;
+    private bool chargeStart = false;
 
     //Axe throw variables
     const int throwTime = 150;
@@ -55,7 +63,9 @@ public class Woodcutter : MonoBehaviour
     const int bombTime = 300;
 
     //Fire Variables
-    const int fireTime = 120;
+    const int fireTimePhase1 = 140;
+    const int fireTimePhase2 = 100;
+    private int fireTime = 120;
     const int numberOfFlames = 10;
     private int mCurrentFlame = 0;
     private Vector3 mFireStartPosition;
@@ -91,6 +101,8 @@ public class Woodcutter : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (GetComponent<HealthComponent>().CurrHealth < GetComponent<HealthComponent>().MaxHealth/2)
+            mInSecondPhase = true;
         FacePlayer();
         HandleState();
     }
@@ -166,6 +178,7 @@ public class Woodcutter : MonoBehaviour
         {
             mInAttack = true;
             mCurrentAttackTimer = trapAttackTime;
+            GetComponent<SpriteRenderer>().sprite = woodcutterThrow;
         }
         if (mFollowingTrap == null)
         {
@@ -198,6 +211,7 @@ public class Woodcutter : MonoBehaviour
 
         if (mCurrentAttackTimer < 0)
         {
+            GetComponent<SpriteRenderer>().sprite = woodcutterNormal;
             mInAttack = false;
             PickNextAttack();
         }   
@@ -207,6 +221,10 @@ public class Woodcutter : MonoBehaviour
     {
         if (mInAttack == false)
         {
+            if (mInSecondPhase == true)
+                chargeTime = chargeTimePhase2;
+            else
+                chargeTime = chargeTimePhase1;
             mStartPosition = transform.position;
             mInAttack = true;
             mCurrentAttackTimer = chargeTime + prepareTime;
@@ -224,6 +242,14 @@ public class Woodcutter : MonoBehaviour
 
         if (mCurrentAttackTimer < chargeTime)
         {
+            if (chargeStart == false)
+            {
+                GetComponent<SpriteRenderer>().sprite = woodcutterCharge;
+                GetComponent<AxeSpin>().enabled = true;
+                //Swap normal hitbox for charge hitbox
+                transform.GetChild(0).gameObject.SetActive(false);
+                transform.GetChild(1).gameObject.SetActive(true);
+            }
             //TODO! Use a flag to check when this is reached for the first time.
             //Then toggle hitboxes on the boss so you can jump over it, and toggle back after the charge is over
             transform.position = mStartPosition +
@@ -239,6 +265,19 @@ public class Woodcutter : MonoBehaviour
 
         if (mCurrentAttackTimer < 0)
         {
+            GetComponent<SpriteRenderer>().sprite = woodcutterNormal;
+            GetComponent<AxeSpin>().enabled = false;
+            //Make sure we are the right way up
+            Vector3 theScale = transform.localScale;
+            if (theScale.y < 0)
+            {
+                theScale.y *= -1;
+                transform.localScale = theScale;
+            }
+
+            //Swap charge hitbox for normal hitbox
+            transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(false);
             mInAttack = false;
             PickNextAttack();
         }
@@ -250,6 +289,7 @@ public class Woodcutter : MonoBehaviour
 
         if (mInAttack == false)
         {
+            GetComponent<SpriteRenderer>().sprite = woodcutterThrow;
             mInAttack = true;
             mCurrentAttackTimer = throwTime;
             mAxe = Instantiate(axe, mTargetPosition.position, Quaternion.identity);
@@ -279,6 +319,7 @@ public class Woodcutter : MonoBehaviour
 
         if (mCurrentAttackTimer < 0)
         {
+            GetComponent<SpriteRenderer>().sprite = woodcutterNormal;
             Destroy(mAxe);
             mAxe = null;
             mInAttack = false;
@@ -290,6 +331,7 @@ public class Woodcutter : MonoBehaviour
     {
         if (mInAttack == false)
         {
+            GetComponent<SpriteRenderer>().sprite = woodcutterThrow;
             mInAttack = true;
             mCurrentAttackTimer = bombTime;
         }
@@ -313,6 +355,11 @@ public class Woodcutter : MonoBehaviour
             float angleInRadians = Mathf.Atan2(direction.y, direction.x);
             float angle = Mathf.Rad2Deg * angleInRadians;
             Quaternion rot = Quaternion.Euler(0, 0, angle);
+            GameObject grenade;
+            if (mInSecondPhase)
+                grenade = Phase2Grenade;
+            else
+                grenade = Phase1Grenade;
             GameObject bomb = Instantiate(grenade, transform.position + offset, rot);
             float strength = Random.Range(0f, throwStrength);
             Rigidbody2D rbody = bomb.transform.GetChild(0).GetComponent<Rigidbody2D>();
@@ -323,6 +370,7 @@ public class Woodcutter : MonoBehaviour
 
         if (mCurrentAttackTimer < 0)
         {
+            GetComponent<SpriteRenderer>().sprite = woodcutterNormal;
             mInAttack = false;
             PickNextAttack();
         }
@@ -332,6 +380,11 @@ public class Woodcutter : MonoBehaviour
     {
         if (mInAttack == false)
         {
+            if (mInSecondPhase)
+                fireTime = fireTimePhase2;
+            else
+                fireTime = fireTimePhase1;
+            GetComponent<SpriteRenderer>().sprite = woodcutterThrow;
             mInAttack = true;
             mCurrentAttackTimer = fireTime;
             mCurrentFlame = 0;
@@ -358,6 +411,7 @@ public class Woodcutter : MonoBehaviour
 
         if (mCurrentAttackTimer < 0)
         {
+            GetComponent<SpriteRenderer>().sprite = woodcutterNormal;
             mInAttack = false;
             PickNextAttack();
         }
