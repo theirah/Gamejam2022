@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: Lvl2EndYesCorrupt
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: Wolf
+      sentence: Eat or be eaten.
+    - speaker: Red
+      sentence: "Alright, then. I\u2019ll start a fire."
+    - speaker: 
+      sentence: <Red proceeds to start a fire and cook the corpse, allowing her and
+        Wolf to eat>
+    - speaker: Red
+      sentence: "Ahhh\u2026 Much better."
+    - speaker: Wolf
+      sentence: <Agreeing growl>
+    - speaker: Red
+      sentence: "What\u2019s wrong, Wolf? Can\u2019t speak anymore?"
+    - speaker: Wolf
+      sentence: <Confused whimper>
+    - speaker: Red
+      sentence: "And your body\u2026 You\u2019ve gotten much bigger and more ferocious\u2026"
+    - speaker: Red
+      sentence: "Come to think of it, I feel this sudden urge to destroy whatever
+        it is that faces me\u2026"
+    - speaker: Wolf
+      sentence: <Confident growl>
+    - speaker: Red
+      sentence: "Come on, Wolf. We\u2019re almost home free."

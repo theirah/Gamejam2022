@@ -64,6 +64,10 @@ PrefabInstance:
       value: TestPerson2
       objectReference: {fileID: 0}
     - target: {fileID: 932397778516795466, guid: 2156b3d4c45dec44bb71496e072e532e, type: 3}
+      propertyPath: rootDialogueNode
+      value: 
+      objectReference: {fileID: 11400000, guid: b4c179a67a509f54fadf9be3c5e74844, type: 2}
+    - target: {fileID: 932397778516795466, guid: 2156b3d4c45dec44bb71496e072e532e, type: 3}
       propertyPath: dialogues.Array.data[0].sentences.Array.data[0]
       value: End of Level 2
       objectReference: {fileID: 0}

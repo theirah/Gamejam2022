@@ -64,6 +64,10 @@ PrefabInstance:
       value: TestPerson1
       objectReference: {fileID: 0}
     - target: {fileID: 932397778516795466, guid: 2156b3d4c45dec44bb71496e072e532e, type: 3}
+      propertyPath: rootDialogueNode
+      value: 
+      objectReference: {fileID: 11400000, guid: 709e8779416494549a02d671ff75fefd, type: 2}
+    - target: {fileID: 932397778516795466, guid: 2156b3d4c45dec44bb71496e072e532e, type: 3}
       propertyPath: dialogues.Array.size
       value: 2
       objectReference: {fileID: 0}

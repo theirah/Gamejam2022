@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c69360cad7aa748ade33209b60d2f8, type: 3}
+  m_Name: Lvl1EndChoice
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: Red
+      sentence: Wolf, look at this!
+    - speaker: Wolf
+      sentence: Oh?
+    - speaker: Wolf
+      sentence: "A body... Most likely the Woodsman\u2019s doing."
+    - speaker: Red
+      sentence: "Hmm\u2026"
+    - speaker: Wolf
+      sentence: "What\u2019s on your mind?"
+    - speaker: Red
+      sentence: Do you think it would be wise to take what this person was carrying
+        for ourselves?
+    - speaker: Wolf
+      sentence: "Hmm\u2026 I\u2019m not sure. This person\u2019s supplies may be
+        laced with the Woodsman\u2019s power."
+    - speaker: Wolf
+      sentence: It could be dangerous.
+    - speaker: Player Choice
+      sentence: Loot the body?
+  choiceA:
+    buttonText: Yes
+    nextNode: {fileID: 11400000, guid: de8fc610979691840ad5b9e65a4d2d0d, type: 2}
+    consequences: 1
+  choiceB:
+    buttonText: No
+    nextNode: {fileID: 11400000, guid: d18659606117a6e41bcdcc58dcc1fdfb, type: 2}
+    consequences: 0

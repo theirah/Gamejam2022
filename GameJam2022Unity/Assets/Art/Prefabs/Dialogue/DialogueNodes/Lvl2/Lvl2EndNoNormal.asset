@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: Lvl2EndNoNormal
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: Wolf
+      sentence: Of course not. It was only a jest.
+    - speaker: Wolf
+      sentence: "I may be a wolf, but I\u2019m no savage."
+    - speaker: Red
+      sentence: "That\u2019s what I thought\u2026"
+    - speaker: Red
+      sentence: We should, at least bury him and pay our respects.
+    - speaker: Wolf
+      sentence: Agreed.
+    - speaker: 
+      sentence: <Red and Wolf proceed to bury the body, paying their respects to
+        the victim.>
+    - speaker: Red
+      sentence: "Still, with nothing to eat, we\u2019ll die of starvation if we don\u2019t
+        find something to eat soon."
+    - speaker: Wolf
+      sentence: "Hold a moment\u2026"
+    - speaker: Wolf
+      sentence: "<Sniff, sniff, sniff, sniff\u2026>"
+    - speaker: Wolf
+      sentence: I believe I smell berries nearby!
+    - speaker: Wolf
+      sentence: If we hurry, we may be able to eat some before the Woodsman returns.
+    - speaker: Red
+      sentence: "It\u2019s better than nothing. Let\u2019s go!"

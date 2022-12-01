@@ -44,13 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 302d55d6df84cd047a7f4d6236c7fc5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogues:
-  - name: Little Red
-    sentences:
-    - Hello. My name is Little Red, and this is my story.
-    - You know the story by now. 'The little girl in the red hood gets stalked by
-      a big wolf that wants to eat her and her grandma...' That story, right?
-    - Well, my story is... a little different from that.
+  rootDialogueNode: {fileID: 11400000, guid: c5dd581b77b7ce040b28f782a79839ee, type: 2}
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls: []

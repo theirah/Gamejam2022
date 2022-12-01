@@ -72,10 +72,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139bc8a8d1824034aa5ab3bd19d26e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogues:
-  - name: Boss
-    sentences:
-    - Muahuahua
+  rootDialogueNode: {fileID: 11400000, guid: 1305c43ed7db0e0498a7032c480ab26a, type: 2}
   onDialogueEnd:
     m_PersistentCalls:
       m_Calls:

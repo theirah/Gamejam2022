@@ -5,12 +5,12 @@ using UnityEngine.Events;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    public List<Dialogue> dialogues;
+    public DialogueNode rootDialogueNode;
     public UnityEvent onDialogueEnd;
 
     public void TriggerDialogue()
     {
         FindObjectOfType<AudioManager>().StageEnd();
-        FindObjectOfType<DialogueManager>().StartDialogues(dialogues, onDialogueEnd);
+        FindObjectOfType<DialogueManager>().StartDialogues(rootDialogueNode, onDialogueEnd);
     }
 }

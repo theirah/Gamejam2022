@@ -60,6 +60,10 @@ PrefabInstance:
       value: Level 3 Person
       objectReference: {fileID: 0}
     - target: {fileID: 2161505186854604934, guid: 4903df0ced02492459e324ada9ef54b6, type: 3}
+      propertyPath: rootDialogueNode
+      value: 
+      objectReference: {fileID: 11400000, guid: cb85c88d9b8323f4db8c55c1383050e8, type: 2}
+    - target: {fileID: 2161505186854604934, guid: 4903df0ced02492459e324ada9ef54b6, type: 3}
       propertyPath: dialogues.Array.data[0].name
       value: Level3 person
       objectReference: {fileID: 0}

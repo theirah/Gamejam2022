@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: Lvl1EndYes
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: Red
+      sentence: "We\u2019ll need all the help we can get. Let\u2019s take what this
+        fellow has."
+    - speaker: Wolf
+      sentence: "If that\u2019s what you want, then so be it."
+    - speaker: Wolf
+      sentence: "But be careful. You don\u2019t know what may happen when we run
+        this risk."
+    - speaker: Red
+      sentence: "If it\u2019ll help us get through the forest more easily, then it\u2019s
+        a risk we\u2019ll take."
+    - speaker: Wolf
+      sentence: Very well. Let us continue on our trek.
+    - speaker: Red
+      sentence: Right.

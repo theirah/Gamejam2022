@@ -11,7 +11,7 @@ public class SwapCharacterComponent : MonoBehaviour, IPauseable
     [SerializeField]
     List<GameObject> mShadows = new List<GameObject>();
 
-    protected int mCurrIndex;
+    public int mCurrIndex { get; protected set; }
     // Start is called before the first frame update
     void Awake()
     {
