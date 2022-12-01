@@ -12,14 +12,17 @@ public class CharacterController2D : MonoBehaviour
 	[SerializeField] private Transform m_CeilingCheck;                          // A position marking where to check for ceilings
 	[SerializeField] private Collider2D m_CrouchDisableCollider;                // A collider that will be disabled when crouching
 
-	const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
-	private bool m_Grounded;            // Whether or not the player is grounded.
+    AudioManager audioManager;
+
+    const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
+	public bool m_Grounded { get; protected set; }            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
 	private Vector3 m_Velocity = Vector3.zero;
 
-	[Header("Events")]
-	[Space]
+    [Header("Events")]
+    [Space]
+
 
 	public UnityEvent OnLandEvent;
 
@@ -28,7 +31,6 @@ public class CharacterController2D : MonoBehaviour
 
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
-
 
 	public void CopyStatus(CharacterController2D other)
 	{
@@ -39,7 +41,9 @@ public class CharacterController2D : MonoBehaviour
 
 	private void Awake()
 	{
-		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+        audioManager = FindObjectOfType<AudioManager>();
+
+        m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
@@ -125,8 +129,11 @@ public class CharacterController2D : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
-			// Add a vertical force to the player.
-			m_Grounded = false;
+            //trigger the jump sound effect
+            audioManager.PlaySoundEffect(AudioManager.soundEffect.JUMP);
+
+            // Add a vertical force to the player.
+            m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 		}
 	}

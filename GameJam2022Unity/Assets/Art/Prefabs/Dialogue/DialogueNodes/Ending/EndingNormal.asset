@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: EndingNormal
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: 
+      sentence: "It was a hard battle, but we were able to overwhelm the Woodsman
+        and make our escape. I didn\u2019t know I had this kind of strength in me."
+    - speaker: 
+      sentence: " I can\u2019t take all the credit here, however. If it weren\u2019t
+        for Wolf, we would not be here right now. "
+    - speaker: 
+      sentence: "Before long, I\u2019d see my grandmother\u2019s cottage in sight,
+        at which I\u2019d be greeted with her warm smile and her loving embrace."
+    - speaker: 
+      sentence: 'She was alarmed about Wolf for a brief second, but I was quick to
+        tell her that he was a new friend that helped me through the forest. After
+        some time telling her what we had gone through, she was shocked by it all. '
+    - speaker: 
+      sentence: 'Despite that, she was proud of me for being so brave and strong,
+        and she was thankful to Wolf for helping me the entire way through. So much
+        so, she asked if he would like to stay with her as protection. '
+    - speaker: 
+      sentence: "With nowhere to go, he agreed. Now, we had a new member of the family,
+        and we were able to spend more time together. While this may not be how the
+        story usually goes, I\u2019d say it\u2019s better that way."

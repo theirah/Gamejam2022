@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5c69360cad7aa748ade33209b60d2f8, type: 3}
+  m_Name: Lvl2EndChoice
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: 
+      sentence: <Stomachs rumbling>
+    - speaker: Red
+      sentence: "Ugh\u2026 I\u2019m hungry\u2026"
+    - speaker: Wolf
+      sentence: "Truth be told, so am I\u2026"
+    - speaker: Wolf
+      sentence: "Wait a minute\u2026 What is that?"
+    - speaker: Red
+      sentence: <Gasp!>
+    - speaker: Red
+      sentence: "Is that\u2026 another corpse?"
+    - speaker: Wolf
+      sentence: "Yes\u2026 Most likely another of the Woodsman\u2019s victims."
+    - speaker: Wolf
+      sentence: This one is more fattening than the last. He never stood a chance.
+    - speaker: Red
+      sentence: Fattening? Why did you say that?
+    - speaker: Wolf
+      sentence: "Wha\u2013I\u2026 I don\u2019t know\u2026 I must have let my hunger
+        get to me when I gazed at the corpse."
+    - speaker: Red
+      sentence: "You\u2019re not saying we should eat him, are you?"
+    - speaker: Player
+      sentence: Eat the corpse?
+  choiceA:
+    buttonText: Yes
+    nextNode: {fileID: 11400000, guid: 702932417fc25dd4995865acfb4e170a, type: 2}
+    consequences: 1
+  choiceB:
+    buttonText: No
+    nextNode: {fileID: 11400000, guid: 29ba9482e581e5244a1728b9b2703498, type: 2}
+    consequences: 0

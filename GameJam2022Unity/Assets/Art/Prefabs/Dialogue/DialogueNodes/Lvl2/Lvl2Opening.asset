@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: Lvl2Opening
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: Red
+      sentence: "We\u2019ve made some progress."
+    - speaker: Wolf
+      sentence: Indeed. By the looks of things, we should be at the midway point.
+    - speaker: Red
+      sentence: "I\u2019m surprised we were able to make it this far."
+    - speaker: Wolf
+      sentence: "Don\u2019t let your guard down just yet."
+    - speaker: Wolf
+      sentence: "Once we\u2019re out of this forest, and we arrive at where you need
+        to be, that\u2019s when we can relax."
+    - speaker: Red
+      sentence: Why do you help me?
+    - speaker: Wolf
+      sentence: "I\u2019m not sure myself. If anything, I\u2019m surprised you were
+        willing to join forces with me."
+    - speaker: Red
+      sentence: It is strange, yes.
+    - speaker: Wolf
+      sentence: "\u2026"
+    - speaker: Red
+      sentence: "\u2026"
+    - speaker: Wolf
+      sentence: "\u2026In any case, let\u2019s press on. We have more ground to cover."
+    - speaker: Red
+      sentence: Right.

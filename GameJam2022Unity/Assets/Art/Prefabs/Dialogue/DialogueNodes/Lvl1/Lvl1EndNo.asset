@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: Lvl1EndNo
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: Red
+      sentence: "You\u2019re right\u2026 Maybe we should leave this person be and
+        carry on."
+    - speaker: Wolf
+      sentence: Agreed. Knowing the Woodsman, however, he may use this decision to
+        his benefit.
+    - speaker: Red
+      sentence: "We\u2019ll deal with him when it comes to that\u2026 If it comes
+        to that."
+    - speaker: Wolf
+      sentence: "I pray that it doesn\u2019t."
+    - speaker: Red
+      sentence: "Don\u2019t forget. If we work together, we can overcome whatever
+        blocks our path."
+    - speaker: Wolf
+      sentence: "\u2026"
+    - speaker: Red
+      sentence: "Now let\u2019s go. We still have a long way to go."
+    - speaker: Wolf
+      sentence: "\u2026Yes. Of course."

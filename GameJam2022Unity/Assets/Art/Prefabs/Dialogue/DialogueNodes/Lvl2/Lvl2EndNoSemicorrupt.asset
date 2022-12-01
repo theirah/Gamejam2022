@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: Lvl2EndNoSemicorrupt
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: Wolf
+      sentence: "Hmm\u2026 Now that I think about it, what if this was a trap?"
+    - speaker: Red
+      sentence: A trap?
+    - speaker: Wolf
+      sentence: Think about it. What if the Woodsman is aware of our presence here
+        in the forest?
+    - speaker: Wolf
+      sentence: "If that were the case, the last corpse we saw wouldn\u2019t have
+        been a coincidence."
+    - speaker: Wolf
+      sentence: He could take advantage of our situation and jump us when our backs
+        are turned.
+    - speaker: Red
+      sentence: Then what do you suggest we do for food?
+    - speaker: Wolf
+      sentence: "We\u2019ll find a berry bush and eat from it. I\u2019ll sniff one
+        out before we carry on."
+    - speaker: Red
+      sentence: "Let\u2019s hope it\u2019s quick. The last thing we need is to get
+        intercepted."
+    - speaker: Wolf
+      sentence: "I\u2019ll make sure we don\u2019t. Come."

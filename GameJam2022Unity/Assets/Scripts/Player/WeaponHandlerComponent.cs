@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponHandlerComponent : MonoBehaviour
+public class WeaponHandlerComponent : MonoBehaviour, IPauseable
 {
     [SerializeField]
     Weapon mEquippedWeapon;
 
+    AudioManager audioManager;
 
     protected float mCurrChargeTime;
     protected float timeBeforeNextUse = 0;
+
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -50,6 +56,8 @@ public class WeaponHandlerComponent : MonoBehaviour
 
     GameObject FireWeapon(float charge)
     {
+        audioManager.PlaySoundEffect(mEquippedWeapon.weaponSoundEffect);
+
         Vector3 mousePosition = Input.mousePosition;
         mousePosition.z = -Camera.main.transform.position.z; // distance between camera and grid, whose position is at 0
         Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);

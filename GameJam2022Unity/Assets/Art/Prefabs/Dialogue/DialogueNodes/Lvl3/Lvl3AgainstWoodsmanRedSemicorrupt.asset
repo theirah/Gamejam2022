@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: Lvl3AgainstWoodsmanRedSemicorrupt
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: Woodsman
+      sentence: What have we here?
+    - speaker: Red
+      sentence: My name is Red, and I demand you let us through!
+    - speaker: Woodsman
+      sentence: HAHAHAHA! Why should I do that, hm?
+    - speaker: Woodsman
+      sentence: Everyone knows that any who enter my forest will meet their end!
+    - speaker: Red
+      sentence: "I\u2019m not scared of you\u2026 Not when Wolf is by my side!"
+    - speaker: Woodsman
+      sentence: Wolf, hm? So that wily animal decided to have a little girl help
+        him fight?
+    - speaker: Woodsman
+      sentence: "Pathetic\u2026 You two will be dealt with shortly."
+    - speaker: Red
+      sentence: "Don\u2019t underestimate us!"

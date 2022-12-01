@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: Lvl3AgainstWoodsmanWolfCorrupt
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: Wolf
+      sentence: <Threatening growl>
+    - speaker: Woodsman
+      sentence: "Aren\u2019t you the wolf that escaped from me a while ago?"
+    - speaker: Wolf
+      sentence: "\u2026"
+    - speaker: Woodsman
+      sentence: Not saying a word, are we?
+    - speaker: Woodsman
+      sentence: "No matter\u2026 I can tell you aren\u2019t the cowardly beast that
+        ran from me before."
+    - speaker: Woodsman
+      sentence: "Now you look to be more of a ferocious beast, willing to give me
+        the fight I want\u2026"
+    - speaker: Woodsman
+      sentence: HAHAHAHAHA! Now this will be fun!
+    - speaker: Wolf
+      sentence: <Threatening howl>
+    - speaker: Woodsman
+      sentence: "That\u2019s it\u2026 Let the blood boil inside you\u2026"
+    - speaker: Woodsman
+      sentence: "Before it\u2019s drained from you!"

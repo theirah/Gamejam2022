@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: Lvl2EndYesSemicorrupt
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: Wolf
+      sentence: "We have to, Red. It\u2019s a matter of survival."
+    - speaker: Red
+      sentence: "But\u2013"
+    - speaker: Red
+      sentence: <Stomach growls>
+    - speaker: Red
+      sentence: "Ugh\u2026 Fine. It\u2019s not like we have any other choice."
+    - speaker: 
+      sentence: <Red and Wolf proceed to eat the corpse>
+    - speaker: Red
+      sentence: "I can\u2019t believe we did that\u2026 We ate an innocent man\u2026"
+    - speaker: Wolf
+      sentence: "It\u2019s as I said before. We needed to do it to survive."
+    - speaker: Red
+      sentence: "I just\u2026 What would my grandmother think if I told her about
+        this?"
+    - speaker: Wolf
+      sentence: "We\u2019ll worry about that when we\u2019re in the clear. For now,
+        we should continue."
+    - speaker: Red
+      sentence: "OK\u2026"

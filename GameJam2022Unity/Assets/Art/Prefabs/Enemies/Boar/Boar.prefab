@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224168145952470917}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.249, y: -0.194, z: 0}
+  m_LocalPosition: {x: -0.249, y: -0.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40,7 +40,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8139939966300980745}
-  - component: {fileID: 491072058926627648}
+  - component: {fileID: 9069093001706853798}
+  - component: {fileID: 614596432676977528}
   m_Layer: 0
   m_Name: Boar
   m_TagString: Untagged
@@ -65,7 +66,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &491072058926627648
+--- !u!50 &9069093001706853798
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -84,8 +85,20 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &614596432676977528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4436725312965944661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4623f82faaf2c794d8ad400493e745e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5006997345836212165
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5006997345836212165}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.2, z: 0}
+  m_LocalPosition: {x: 0, y: -0.147, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -132,8 +145,8 @@ GameObject:
   - component: {fileID: 1880104481819439004}
   - component: {fileID: 7298476077007463890}
   - component: {fileID: 222892815302789262}
-  - component: {fileID: 1259387683759936744}
-  m_Layer: 0
+  - component: {fileID: 5402253230745581823}
+  m_Layer: 8
   m_Name: PlaceholderBoar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,9 +211,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: 64a1fdd0b95ac4741bc3234c3d357498, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fdc10c5add176e748b8bc91ced9dd7cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.73, y: 0.5}
@@ -243,6 +256,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damagedBy: 0000000002000000
+  scaleDamage: 1
 --- !u!114 &1880104481819439004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +269,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9226cbf15bd9ce46a873510dd57c162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitSound: 8
   MaxHealth: 100
+  CurrHealth: 0
+  OnHealthReachesZero:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 614596432676977528}
+        m_TargetAssemblyTypeName: EnemyDestroySelfComponent, Assembly-CSharp
+        m_MethodName: DestroySelf
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7298476077007463890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDistance: 3
+  seePlayerDistance: 30
   chargeAttack: {fileID: 786137573562147152, guid: 543bfe573f82a4c428fc6f85803bf67b, type: 3}
   noticePlayerJumpForce: 200
   m_MovementSmoothing: 0.05
@@ -279,7 +311,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   maxCoyoteTime: 2
-  visualRepresentation: {fileID: 0}
 --- !u!70 &222892815302789262
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -294,9 +325,9 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6, y: 0.4}
+  m_Size: {x: 0.6, y: 0.3}
   m_Direction: 1
---- !u!255 &1259387683759936744
+--- !u!255 &5402253230745581823
 FixedJoint2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,7 +337,7 @@ FixedJoint2D:
   m_Enabled: 1
   serializedVersion: 4
   m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 491072058926627648}
+  m_ConnectedRigidBody: {fileID: 9069093001706853798}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 1

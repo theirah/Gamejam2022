@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Boar : MonoBehaviour
 {
-    [SerializeField] public int attackDistance = 3;
+    [SerializeField] public float attackDistance = 3.0f;
+    [SerializeField] public float seePlayerDistance = 30.0f;
     [SerializeField] public GameObject chargeAttack;
     [SerializeField] public float noticePlayerJumpForce = 100.0f;
     [SerializeField] public float m_MovementSmoothing = 0.05f;
@@ -48,6 +49,8 @@ public class Boar : MonoBehaviour
         //Check if the enemy can see the player
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         RaycastHit2D hit = Physics2D.Raycast(transform.position, player.transform.position - transform.position);
+        if (hit.collider == null)
+            return;
         if (hit.collider.gameObject.tag == "Player")
         {
             if (mCanSeePlayer == false)
@@ -75,7 +78,7 @@ public class Boar : MonoBehaviour
                     ChargeAttack();
                 }
             }
-            else
+            else if (Vector3.Magnitude(hit.transform.position - transform.position) < seePlayerDistance)
             {
                 if (m_Grounded)
                 {
@@ -92,6 +95,11 @@ public class Boar : MonoBehaviour
                     rbody.velocity = Vector3.SmoothDamp(rbody.velocity, targetVelocity, ref m_Velocity, m_MovementSmoothing);
                 }
             }
+            else
+            {
+                if (coyoteTime > 0)
+                    coyoteTime--;
+            }
         }
         else
         {
@@ -102,10 +110,10 @@ public class Boar : MonoBehaviour
 
     private void Flip()
     {
-        // Switch the way the player is labelled as facing.
+        // Switch the way the enemy is labelled as facing.
         m_FacingRight = !m_FacingRight;
 
-        // Multiply the player's x local scale by -1.
+        // Multiply the enemy's x local scale by -1.
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;

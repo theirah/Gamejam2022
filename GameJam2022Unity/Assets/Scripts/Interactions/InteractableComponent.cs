@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class InteractableComponent : MonoBehaviour
 {
-
+    public UnityEvent<InteractorComponent> OnInteract;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,6 @@ public class InteractableComponent : MonoBehaviour
 
     public virtual void Interact(InteractorComponent interactor)
     {
-        Debug.LogError("No interaction defined for this interactor");
+        OnInteract.Invoke(interactor);
     }
 }

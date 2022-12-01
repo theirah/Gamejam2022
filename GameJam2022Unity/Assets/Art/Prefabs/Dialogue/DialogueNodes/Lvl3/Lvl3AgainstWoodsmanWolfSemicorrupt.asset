@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c571d33651a0a24394332a9ef91fb9c, type: 3}
+  m_Name: Lvl3AgainstWoodsmanWolfSemicorrupt
+  m_EditorClassIdentifier: 
+  dialogue:
+    sentences:
+    - speaker: Wolf
+      sentence: "The Woodsman\u2026"
+    - speaker: Woodsman
+      sentence: So the cowardly little canine returns to accept his fate.
+    - speaker: Wolf
+      sentence: "I won\u2019t be the one to die here."
+    - speaker: Wolf
+      sentence: "We\u2019ve come so far, and if we have to destroy you to finish
+        our quest, then so be it!"
+    - speaker: Woodsman
+      sentence: HAHAHAHAHA! Oh, really?
+    - speaker: Woodsman
+      sentence: A wolf and a little girl are going to destroy ME? How ridiculous.
+    - speaker: Woodsman
+      sentence: "What\u2019s so special about this girl, anyway?"
+    - speaker: Wolf
+      sentence: "If it wasn\u2019t for this girl, then I would never have the confidence
+        to face you here and now."
+    - speaker: Wolf
+      sentence: For the sake of her, we will defeat you! Together!
+    - speaker: Woodsman
+      sentence: "Hmph\u2026 Then you will die together, impudent beast."
