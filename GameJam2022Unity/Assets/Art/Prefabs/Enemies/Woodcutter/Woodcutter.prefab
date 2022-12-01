@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageType: 1
-  damage: 30
+  damage: 5
 --- !u!1 &3876020781729947805
 GameObject:
   m_ObjectHideFlags: 0
