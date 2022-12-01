@@ -269,6 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9226cbf15bd9ce46a873510dd57c162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitSound: 8
   MaxHealth: 100
   OnHealthReachesZero:
     m_PersistentCalls:

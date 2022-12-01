@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Woodcutter : MonoBehaviour
 {
+    AudioManager audioManager;
+
     //Locations
     [SerializeField] public Transform platform1;
     [SerializeField] public Transform platform2;
@@ -82,7 +84,8 @@ public class Woodcutter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mCurrentState = states.none;
+        audioManager = FindObjectOfType<AudioManager>();
+           mCurrentState = states.none;
         mTargetPosition = rightSide;
     }
 
@@ -243,6 +246,8 @@ public class Woodcutter : MonoBehaviour
 
     void HandleAxeThrow()
     {
+        audioManager.PlaySoundEffect(AudioManager.soundEffect.SWING);
+
         if (mInAttack == false)
         {
             mInAttack = true;
@@ -360,6 +365,8 @@ public class Woodcutter : MonoBehaviour
 
     void HandleSwinging()
     {
+        audioManager.PlaySoundEffect(AudioManager.soundEffect.SWING);
+
         if (mInAttack == false)
         {
             mInAttack = true;

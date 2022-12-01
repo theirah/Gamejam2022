@@ -11,6 +11,8 @@ public class Weapon : ScriptableObject
     [SerializeField]
     public float cooldown;
 
+    public AudioManager.soundEffect weaponSoundEffect;
+
     // charge stuff
     [SerializeField]
     public bool isChargeWeapon;
