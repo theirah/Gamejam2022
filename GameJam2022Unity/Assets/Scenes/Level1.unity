@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2162,6 +2162,8 @@ MonoBehaviour:
   - {fileID: 4436725312965944661, guid: d392d4bd7cfbf964ea10b5fbaeee6379, type: 3}
   enemiesCount: 10
   enemySpace: 6
+  player: {fileID: 185140636}
+  playerStartPos: {x: 0, y: 2.5, z: 0}
 --- !u!1 &2073514896
 GameObject:
   m_ObjectHideFlags: 0
