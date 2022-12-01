@@ -314,7 +314,7 @@ InputManager:
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: b
+    positiveButton: q
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000

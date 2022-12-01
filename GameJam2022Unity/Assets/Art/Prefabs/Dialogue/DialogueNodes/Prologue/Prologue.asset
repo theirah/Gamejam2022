@@ -46,6 +46,6 @@ MonoBehaviour:
         Attack: Aim with mouse and left click
         (hold and release to make Red''s knives fly further)'
     - speaker: 'CONTROLS:'
-      sentence: 'Switch character: B
+      sentence: 'Switch character: Q
 
         Interact: E'
