@@ -6,8 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class PlayerDeathComponent : MonoBehaviour
 {
+    AudioManager audioManager;
+
+    private void Start()
+    {
+        audioManager = FindObjectOfType<AudioManager>();
+    }
+
     public void Die()
     {
+        audioManager.PlaySoundEffect(AudioManager.soundEffect.PLAYERDEATH);
         FindObjectOfType<PauseManager>().PauseAll();
         UnityEvent afterFadeEvent = new UnityEvent();
         afterFadeEvent.AddListener(Unpause);
