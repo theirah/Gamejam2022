@@ -258,6 +258,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 25461712}
   m_CullTransparentMesh: 1
+--- !u!1 &39108288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 39108290}
+  - component: {fileID: 39108289}
+  m_Layer: 0
+  m_Name: CorruptionStateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &39108289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39108288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b482df0e045013746a1424f1133a16d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  corruptionLevel: 0
+--- !u!4 &39108290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 39108288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 594.1592, y: 233.7178, z: -2.4541912}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &42375550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2870,6 +2915,8 @@ MonoBehaviour:
   stage2RedMusic: {fileID: 1595886529}
   stage1WolfMusic: {fileID: 1959256153}
   stage2WolfMusic: {fileID: 1595886529}
+  stage3RedMusic: {fileID: 0}
+  stage3WolfMusic: {fileID: 0}
   stage3BossMusic: {fileID: 1595886529}
   trapSE: {fileID: 1595886529}
   bigSwing1SE: {fileID: 1595886529}
