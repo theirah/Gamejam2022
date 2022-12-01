@@ -40,3 +40,12 @@ MonoBehaviour:
     - speaker: 
       sentence: "Hesitantly, he agreed, and so we set off on our perilous journey
         through the massive forest, our main goal being to survive\u2026"
+    - speaker: 'CONTROLS:'
+      sentence: 'Movement: WASD/ARROWS
+
+        Attack: Aim with mouse and left click
+        (hold and release to make Red''s knives fly further)'
+    - speaker: 'CONTROLS:'
+      sentence: 'Switch character: B
+
+        Interact: E'
