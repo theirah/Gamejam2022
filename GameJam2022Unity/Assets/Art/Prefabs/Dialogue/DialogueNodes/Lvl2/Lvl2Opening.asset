@@ -38,5 +38,5 @@ MonoBehaviour:
       sentence: "\u2026"
     - speaker: Wolf
       sentence: "\u2026In any case, let\u2019s press on. We have more ground to cover."
-    - speaker: Wolf
+    - speaker: Red
       sentence: Right.
